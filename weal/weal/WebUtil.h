@@ -17,8 +17,8 @@
 #define request_get @"GET"
 #define request_time_out 18
 #define param_ak @"e10adc3949ba59abbe56e057f20f883e"
-#define net_err_msg @"找不到可用的网络连接"
-#define load_fail_msg @"很抱歉，网络不给力，加载数据失败了"
+#define net_err_msg @"找不到可用的网络连接>.<"
+#define load_fail_msg @"很抱歉，网络不给力，加载数据失败了>.<"
 
 //#define root_url @"http://192.168.0.114:8080/tck_ios_server"
 #define root_url @"http://192.168.0.114:8088/iqasweb"
