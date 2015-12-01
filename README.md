@@ -1,3 +1,3 @@
 # wealProduct
-It is a ios App for student
+It is an IOS App for student
 Created by CNU 103Lab
