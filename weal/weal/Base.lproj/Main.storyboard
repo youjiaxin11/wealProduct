@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleAspectFit" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="01.png" translatesAutoresizingMaskIntoConstraints="NO" id="S2H-JY-cEn">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yas-Dg-MkE">
+                                <rect key="frame" x="703" y="566" width="213" height="68"/>
+                                <connections>
+                                    <segue destination="BW5-nX-Tpm" kind="modal" id="6OP-6C-pjU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="258" y="242"/>
+        </scene>
+        <!--Star Screen-->
+        <scene sceneID="XA1-pq-Bbm">
+            <objects>
+                <viewController storyboardIdentifier="StarScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AFh-xE-GT4" customClass="StarScreen" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8nh-Yj-K2t"/>
+                        <viewControllerLayoutGuide type="bottom" id="7sC-Rh-TT8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NFi-pV-x4x">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="05.png" translatesAutoresizingMaskIntoConstraints="NO" id="f7n-Co-eQ1">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5iM-IX-MZi">
+                                <rect key="frame" x="291" y="264" width="233" height="270"/>
+                                <connections>
+                                    <segue destination="2u5-ZE-oQj" kind="modal" id="Ll1-WU-Qpf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P5p-tA-Ul3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="258" y="1073"/>
+        </scene>
+        <!--Test Wrong-->
+        <scene sceneID="iDZ-O0-8bD">
+            <objects>
+                <viewController storyboardIdentifier="TestWrong" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ILC-U6-lks" customClass="TestWrong" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TGt-JR-XlX"/>
+                        <viewControllerLayoutGuide type="bottom" id="v1i-GY-hLr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yht-hZ-aN2">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fg0-Ae-FOu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="258" y="1905"/>
+        </scene>
+        <!--Resource Amplify-->
+        <scene sceneID="0d4-DM-IIl">
+            <objects>
+                <viewController storyboardIdentifier="ResourceAmplify" useStoryboardIdentifierAsRestorationIdentifier="YES" id="l70-6E-4Pi" customClass="ResourceAmplify" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Wjb-PE-DYW"/>
+                        <viewControllerLayoutGuide type="bottom" id="0Oy-QN-T1p"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ssH-rP-pNf">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A4b-QA-dsq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="258" y="2734"/>
+        </scene>
+        <!--Myfriend-->
+        <scene sceneID="iwt-KD-HNX">
+            <objects>
+                <viewController storyboardIdentifier="Myfriend" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tHu-0p-zyX" customClass="Myfriend" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="11y-f0-8PO"/>
+                        <viewControllerLayoutGuide type="bottom" id="NQt-mR-3Hg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RVi-RL-pus">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kjk-BV-6jK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="258" y="3562"/>
+        </scene>
+        <!--Login View-->
+        <scene sceneID="yCF-Ta-krU">
+            <objects>
+                <viewController storyboardIdentifier="LoginView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BW5-nX-Tpm" customClass="LoginView" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bpK-4d-wVf"/>
+                        <viewControllerLayoutGuide type="bottom" id="J04-l0-W2f"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="v1W-MD-xc7">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="02.png" translatesAutoresizingMaskIntoConstraints="NO" id="ETi-ke-4dP">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q70-sr-5Wg">
+                                <rect key="frame" x="161" y="454" width="270" height="76"/>
+                                <connections>
+                                    <action selector="doClick:" destination="BW5-nX-Tpm" eventType="touchUpInside" id="kwE-in-3Nk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="70w-Ib-6yC">
+                                <rect key="frame" x="574" y="454" width="270" height="76"/>
+                                <connections>
+                                    <segue destination="Icj-BL-Df6" kind="modal" id="NNm-j0-dzU"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="loginname" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cFh-t0-bFx">
+                                <rect key="frame" x="254" y="246" width="487" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password   " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PoQ-St-WXS">
+                                <rect key="frame" x="254" y="346" width="487" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                    <connections>
+                        <outlet property="lgnBtn" destination="Q70-sr-5Wg" id="Tyq-xP-h1s"/>
+                        <outlet property="lgnInput" destination="cFh-t0-bFx" id="g5d-dn-fy0"/>
+                        <outlet property="pwdInput" destination="PoQ-St-WXS" id="0Uv-Z5-82r"/>
+                        <outlet property="rgtBtn" destination="70w-Ib-6yC" id="pxI-vB-0bD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="38E-bl-fRz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1372" y="242"/>
+        </scene>
+        <!--Word Guide-->
+        <scene sceneID="7uD-th-C9s">
+            <objects>
+                <viewController storyboardIdentifier="WordGuide" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2u5-ZE-oQj" customClass="WordGuide" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vFl-ho-Ou1"/>
+                        <viewControllerLayoutGuide type="bottom" id="GOw-3b-Dbn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RWP-g5-Ghu">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="06.png" translatesAutoresizingMaskIntoConstraints="NO" id="rEz-Dk-KCb">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CcP-Ti-zLx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1372" y="1073"/>
+        </scene>
+        <!--Resource Word-->
+        <scene sceneID="xSU-bQ-W0a">
+            <objects>
+                <viewController storyboardIdentifier="ResourceWord" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5Pg-wO-vte" customClass="ResourceWord" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="D07-XR-fHf"/>
+                        <viewControllerLayoutGuide type="bottom" id="nKB-OT-zQh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wdk-Hm-SYI">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dur-Bn-uwj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1372" y="1905"/>
+        </scene>
+        <!--Upload Video-->
+        <scene sceneID="i4R-cT-X1R">
+            <objects>
+                <viewController storyboardIdentifier="UploadVideo" useStoryboardIdentifierAsRestorationIdentifier="YES" id="GL3-hc-0Qh" customClass="UploadVideo" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NCd-nL-4M2"/>
+                        <viewControllerLayoutGuide type="bottom" id="xMf-5c-3BD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="J7p-Gk-2K7">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XGW-NY-XRD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1372" y="2734"/>
+        </scene>
+        <!--Vhelp-->
+        <scene sceneID="w31-dX-J27">
+            <objects>
+                <viewController storyboardIdentifier="Vhelp" useStoryboardIdentifierAsRestorationIdentifier="YES" id="TrE-Zb-qja" customClass="Vhelp" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HnM-YJ-Lbh"/>
+                        <viewControllerLayoutGuide type="bottom" id="VQI-m9-EKY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SAs-Bp-Dhf">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ol4-9d-65T" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1372" y="3562"/>
+        </scene>
+        <!--Register-->
+        <scene sceneID="0Pc-Ig-LtI">
+            <objects>
+                <viewController storyboardIdentifier="Register" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Icj-BL-Df6" customClass="Register" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QY3-on-a6I"/>
+                        <viewControllerLayoutGuide type="bottom" id="VED-No-nNJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Bgc-df-gGm">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="03.png" translatesAutoresizingMaskIntoConstraints="NO" id="W3J-w4-X6b">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N7L-hf-xHM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2431" y="242"/>
+        </scene>
+        <!--Word Learning-->
+        <scene sceneID="As2-dC-GBy">
+            <objects>
+                <viewController storyboardIdentifier="WordLearning" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PY3-va-S8o" customClass="WordLearning" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hTm-MU-tPN"/>
+                        <viewControllerLayoutGuide type="bottom" id="ee9-X9-VHP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zsW-RJ-fi5">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rIa-3e-8H8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2431" y="1073"/>
+        </scene>
+        <!--Resource Sentence-->
+        <scene sceneID="sb3-FT-HTL">
+            <objects>
+                <viewController storyboardIdentifier="RsourceSentence" useStoryboardIdentifierAsRestorationIdentifier="YES" id="c1Y-KV-bAT" customClass="ResourceSentence" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RsK-j8-7dK"/>
+                        <viewControllerLayoutGuide type="bottom" id="QDQ-OL-MHz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0yj-Wg-oyc">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ecn-eR-8ov" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2431" y="1905"/>
+        </scene>
+        <!--Upload Audio-->
+        <scene sceneID="WDG-6B-tk2">
+            <objects>
+                <viewController storyboardIdentifier="UploadAudio" useStoryboardIdentifierAsRestorationIdentifier="YES" id="if9-gr-WVt" customClass="UploadAudio" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eRA-Wc-pTu"/>
+                        <viewControllerLayoutGuide type="bottom" id="4bR-fb-QUE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="izj-Mg-wf5">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="29p-K4-MNY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2431" y="2734"/>
+        </scene>
+        <!--My Work-->
+        <scene sceneID="Xzq-O5-9Iu">
+            <objects>
+                <viewController storyboardIdentifier="MyWork" useStoryboardIdentifierAsRestorationIdentifier="YES" id="at4-2Z-qyq" customClass="MyWork" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="A2M-qY-QcN"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ltn-an-CiZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="P5s-IA-Bq1">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YgH-T9-lA9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2431" y="3562"/>
+        </scene>
+        <!--Learning Record-->
+        <scene sceneID="Wew-Vh-RrD">
+            <objects>
+                <viewController storyboardIdentifier="LearningRecord" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Jy8-dO-ARj" customClass="LearningRecord" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QZJ-Yr-gZR"/>
+                        <viewControllerLayoutGuide type="bottom" id="N1W-NM-Fhl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="m8o-KV-gR3">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ic9-0K-Dbg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3477" y="242"/>
+        </scene>
+        <!--Test View-->
+        <scene sceneID="Q6G-K7-Ra5">
+            <objects>
+                <viewController storyboardIdentifier="TestView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ot7-HH-Lmo" customClass="TestView" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Sj3-wA-gP0"/>
+                        <viewControllerLayoutGuide type="bottom" id="XL6-Ns-npo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5Ro-Sn-Q9a">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HME-3G-dOv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3477" y="1073"/>
+        </scene>
+        <!--Resource Cartoon-->
+        <scene sceneID="dvd-QX-5SQ">
+            <objects>
+                <viewController storyboardIdentifier="ResourceCartoon" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZRQ-Ha-wYe" customClass="ResourceCartoon" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kKv-WH-9oD"/>
+                        <viewControllerLayoutGuide type="bottom" id="gbe-Zy-x0L"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Z2b-a9-5dE">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Iw-LN-G8t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3477" y="1905"/>
+        </scene>
+        <!--Upload Photo-->
+        <scene sceneID="Xpk-9F-HZg">
+            <objects>
+                <viewController storyboardIdentifier="UploadPhoto" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vaY-ko-hxe" customClass="UploadPhoto" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ai7-mM-ky7"/>
+                        <viewControllerLayoutGuide type="bottom" id="imB-Je-nxA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3bH-uX-TWY">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="969-es-wNo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3477" y="2734"/>
+        </scene>
+        <!--Begin Learning-->
+        <scene sceneID="m9t-Qe-3Ro">
+            <objects>
+                <viewController storyboardIdentifier="BeginLearing" useStoryboardIdentifierAsRestorationIdentifier="YES" id="24o-br-zlk" customClass="BeginLearning" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fPx-vw-vts"/>
+                        <viewControllerLayoutGuide type="bottom" id="3ha-du-p4x"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7cM-wO-kxI">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="551-dr-Nb9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4533" y="242"/>
+        </scene>
+        <!--Test Right-->
+        <scene sceneID="hpO-g8-5Dw">
+            <objects>
+                <viewController storyboardIdentifier="TestRight" useStoryboardIdentifierAsRestorationIdentifier="YES" id="NC9-f3-Mnl" customClass="TestRight" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZB4-ud-WUG"/>
+                        <viewControllerLayoutGuide type="bottom" id="2JH-by-U11"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SYO-s1-ikI">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vs4-iz-3dS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4533" y="1073"/>
+        </scene>
+        <!--Resource Painting-->
+        <scene sceneID="fPh-zY-iqD">
+            <objects>
+                <viewController storyboardIdentifier="ResourcePainting" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wue-lc-VhY" customClass="ResourcePainting" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="n1Y-Mb-aUf"/>
+                        <viewControllerLayoutGuide type="bottom" id="hR0-FJ-Hjd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="187-Tc-2eR">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j2f-PR-nK9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4533" y="1905"/>
+        </scene>
+        <!--Upload Word-->
+        <scene sceneID="3Sb-eY-RgC">
+            <objects>
+                <viewController storyboardIdentifier="UploadWord" useStoryboardIdentifierAsRestorationIdentifier="YES" id="z5W-hB-PtN" customClass="UploadWord" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hAj-78-GrE"/>
+                        <viewControllerLayoutGuide type="bottom" id="m8c-Uu-8dd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="omd-gd-yOp">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="59o-Xc-jma" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4533" y="2734"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="01.png" width="1192" height="746"/>
+        <image name="02.png" width="1197" height="746"/>
+        <image name="03.png" width="1198" height="744"/>
+        <image name="05.png" width="1161" height="745"/>
+        <image name="06.png" width="1201" height="747"/>
+    </resources>
+</document>
