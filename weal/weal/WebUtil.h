@@ -21,7 +21,7 @@
 #define load_fail_msg @"很抱歉，网络不给力，加载数据失败了"
 
 //#define root_url @"http://192.168.0.114:8080/tck_ios_server"
-#define root_url @"http://192.168.0.113:8088/iqasweb"
+#define root_url @"http://192.168.0.114:8088/iqasweb"
 
 
 enum RequestType {
