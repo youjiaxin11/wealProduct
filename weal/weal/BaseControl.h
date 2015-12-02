@@ -16,7 +16,7 @@ typedef void(^ResponseCallback)(NSMutableDictionary*);
 
 @interface BaseControl : UIViewController<UIAlertViewDelegate, UIActionSheetDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, AVAudioRecorderDelegate,UICollectionViewDelegate,UITableViewDelegate,UICollectionViewDataSource,UITableViewDataSource,UITableViewDelegate>
 
-// 这两个属性要记得手动清空@@@
+// 这两个属性要记得手动清空
 @property NSString* fromControl;
 @property NSMutableDictionary *fromMap;
 
