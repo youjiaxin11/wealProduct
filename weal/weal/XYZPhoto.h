@@ -24,6 +24,7 @@ typedef NS_ENUM(NSInteger, XYZPhotoState) {
 @property (nonatomic) float oldSpeed;
 @property (nonatomic) float oldAlpha;
 @property (nonatomic) int state;
+@property (nonatomic) int photoId;
 
 - (void)updateImage:(UIImage *)image;
 - (void)setImageAlphaAndSpeedAndSize:(float)alpha;

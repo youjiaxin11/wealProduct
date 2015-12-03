@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "WordGuide.h"
+#import "StarScreen.h"
+
 @implementation WordGuide
 
 //左滑返回上一页
@@ -15,7 +17,10 @@
 {
     if (sender.direction == UISwipeGestureRecognizerDirectionRight) {
         NSLog(@"left");
-        [self dismissViewControllerAnimated:YES completion:nil];
+        UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        StarScreen *nextPage = [mainStoryboard instantiateViewControllerWithIdentifier:@"StarScreen"];
+        [nextPage setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
+        [self presentViewController:nextPage animated:YES completion:nil];
     }
 }
 

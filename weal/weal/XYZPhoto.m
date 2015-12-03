@@ -33,8 +33,8 @@
         
 //        [NSTimer scheduledTimerWithTimeInterval:1/30 target:self selector:@selector(movePhotos) userInfo:nil repeats:YES];
         
-        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapImage)];
-        [self addGestureRecognizer:tap];
+//        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapImage)];
+//        [self addGestureRecognizer:tap];
         
         UISwipeGestureRecognizer *swip = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swipImage)];
         [swip setDirection:UISwipeGestureRecognizerDirectionLeft | UISwipeGestureRecognizerDirectionRight];
@@ -45,34 +45,34 @@
     return self;
 }
 
-- (void)tapImage {
-    
-    [UIView animateWithDuration:0.5 animations:^{
-        
-        if (self.state == XYZPhotoStateNormal) {
-            self.oldFrame = self.frame;
-            self.oldAlpha = self.alpha;
-            self.oldSpeed = self.speed;
-            self.frame = CGRectMake(50, 120, self.superview.bounds.size.width - 240, self.superview.bounds.size.height - 240);//修改单击图片的位置和大小
-            self.imageView.frame = self.bounds;
-            self.drawView.frame = self.bounds;
-            [self.superview bringSubviewToFront:self];
-            self.speed = 0;
-            self.alpha = 1;
-            self.state = XYZPhotoStateBig;
-            
-        } else if (self.state == XYZPhotoStateBig) {
-            self.frame = self.oldFrame;
-            self.alpha = self.oldAlpha;
-            self.speed = self.oldSpeed;
-            self.imageView.frame = self.bounds;
-            self.drawView.frame = self.bounds;
-            self.state = XYZPhotoStateNormal;
-        }
-        
-    }];
-   
-}
+//- (void)tapImage {
+//    
+//    [UIView animateWithDuration:0.5 animations:^{
+//        
+//        if (self.state == XYZPhotoStateNormal) {
+//            self.oldFrame = self.frame;
+//            self.oldAlpha = self.alpha;
+//            self.oldSpeed = self.speed;
+//            self.frame = CGRectMake(50, 120, self.superview.bounds.size.width - 240, self.superview.bounds.size.height - 240);//修改单击图片的位置和大小
+//            self.imageView.frame = self.bounds;
+//            self.drawView.frame = self.bounds;
+//            [self.superview bringSubviewToFront:self];
+//            self.speed = 0;
+//            self.alpha = 1;
+//            self.state = XYZPhotoStateBig;
+//            
+//        } else if (self.state == XYZPhotoStateBig) {
+//            self.frame = self.oldFrame;
+//            self.alpha = self.oldAlpha;
+//            self.speed = self.oldSpeed;
+//            self.imageView.frame = self.bounds;
+//            self.drawView.frame = self.bounds;
+//            self.state = XYZPhotoStateNormal;
+//        }
+//        
+//    }];
+//   
+//}
 
 - (void)swipImage {
     

@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "StarScreen.h"
 #import "XYZPhoto.h"
+#import "WordGuide.h"
+#import "LoginView.h"
 
 #define IMAGEWIDTH 360
 #define IMAGEHEIGHT 480
@@ -52,15 +54,21 @@
             
             XYZPhoto *photo = [[XYZPhoto alloc]initWithFrame:CGRectMake(X, Y, W, H)];
             //[photo updateImage:[UIImage imageWithContentsOfFile:photoPaths[i]]];
-            NSString *name1 = @"topic";
+            NSString *name1 = @"topics";
             NSString *name2 = [NSString stringWithFormat:@"%d.png", i+1];
             NSString *name3 = [name1 stringByAppendingString:name2];
             UIImage *photoImage = [UIImage imageNamed:name3];
+            //CGSize OriginSize = photoImageOrigin.size;
+            //UIImage *photoImage = [self image:photoImageOrigin centerInSize:CGSizeMake(OriginSize.width/5,OriginSize.height/5)];
             [photo updateImage:photoImage];
+            photo.photoId = i+1;
             [self.view addSubview:photo];
             
             float alpha = i*1.0/10 + 0.2;
             [photo setImageAlphaAndSpeedAndSize:alpha];
+            
+            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapImage:)];
+            [photo addGestureRecognizer:tap];
             
             [self.photos addObject:photo];
         }
@@ -71,6 +79,21 @@
     [doubleTap setNumberOfTapsRequired:2];
     [self.view addGestureRecognizer:doubleTap];
     
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(singleTap)];
+    [singleTap setNumberOfTapsRequired:1];
+    [self.view addGestureRecognizer:singleTap];
+    
+    
+}
+
+- (UIImage *)image:(UIImage *)image centerInSize:(CGSize)viewsize
+{
+    UIGraphicsBeginImageContext(CGSizeMake(viewsize.width, viewsize.height));
+    [image drawInRect:CGRectMake(0, 0, viewsize.width, viewsize.height)];
+    UIImage *reSizeImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return reSizeImage;
 }
 
 - (void)doubleTap {
@@ -114,6 +137,71 @@
     
 }
 
+- (void)singleTap {
+    
+    NSLog(@"SingleTap...........");
+    
+    for (XYZPhoto *photo in self.photos) {
+        if (photo.state == XYZPhotoStateDraw || photo.state == XYZPhotoStateTogether) {
+            return;
+        }
+    }
+    
+    
+    [UIView animateWithDuration:1 animations:^{
+        for (int i = 0; i < self.photos.count; i++) {
+            XYZPhoto *photo = [self.photos objectAtIndex:i];
+            
+            if (photo.state == XYZPhotoStateBig) {
+                photo.frame = photo.oldFrame;
+                photo.alpha = photo.oldAlpha;
+                photo.speed = photo.oldSpeed;
+                photo.imageView.frame = photo.bounds;
+                photo.drawView.frame = photo.bounds;
+                photo.state = XYZPhotoStateNormal;
+            }
+        }
+        
+    }];
+    
+}
+
+
+- (void)tapImage:(UIGestureRecognizer*)sender {
+    
+    XYZPhoto *photo = sender.view;
+    
+    [UIView animateWithDuration:0.5 animations:^{
+        
+        if (photo.state == XYZPhotoStateNormal) {
+            photo.oldFrame = photo.frame;
+            photo.oldAlpha = photo.alpha;
+            photo.oldSpeed = photo.speed;
+            photo.frame = CGRectMake(50, 120, photo.superview.bounds.size.width - 250, photo.superview.bounds.size.height - 250);//修改单击图片的位置和大小
+            photo.imageView.frame = photo.bounds;
+            photo.drawView.frame = photo.bounds;
+            [photo.superview bringSubviewToFront:photo];
+            photo.speed = 0;
+            photo.alpha = 1;
+            photo.state = XYZPhotoStateBig;
+            
+        } else if (photo.state == XYZPhotoStateBig || photo.state == XYZPhotoStateTogether) {
+            NSLog(@"跳转photoId:%d",photo.photoId);
+//            sender.frame = sender.oldFrame;
+//            sender.alpha = sender.oldAlpha;
+//            sender.speed = sender.oldSpeed;
+//            sender.imageView.frame = sender.bounds;
+//            sender.drawView.frame = sender.bounds;
+            photo.state = XYZPhotoStateNormal;
+            UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            WordGuide *nextPage = [mainStoryboard instantiateViewControllerWithIdentifier:@"WordGuide"];
+            [nextPage setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
+            [self presentViewController:nextPage animated:YES completion:nil];
+        }
+        
+    }];
+    
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -128,7 +216,10 @@
 {
     if (sender.direction == UISwipeGestureRecognizerDirectionRight) {
         NSLog(@"left");
-        [self dismissViewControllerAnimated:YES completion:nil];
+        UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        LoginView *nextPage = [mainStoryboard instantiateViewControllerWithIdentifier:@"LoginView"];
+        [nextPage setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
+        [self presentViewController:nextPage animated:YES completion:nil];
     }
 }
 
