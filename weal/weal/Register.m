@@ -15,7 +15,10 @@
 {
     if (sender.direction == UISwipeGestureRecognizerDirectionRight) {
         NSLog(@"left");
-        [self dismissViewControllerAnimated:YES completion:nil];
+        UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        LoginView *nextPage = [mainStoryboard instantiateViewControllerWithIdentifier:@"LoginView"];
+        [nextPage setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
+        [self presentViewController:nextPage animated:YES completion:nil];
     }
 }
 

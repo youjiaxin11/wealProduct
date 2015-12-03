@@ -27,7 +27,7 @@
 }
 
 - (void)btnClick:(NSString*)url {
-    NSString *param = [NSString stringWithFormat:@"username=%@&password=%@", lgnInput.text, pwdInput.text];
+    NSString *param = [NSString stringWithFormat:@"userName=%@&password=%@", lgnInput.text, pwdInput.text];
     [self requestTck:url _param:param _callback:^(NSMutableDictionary *map){
         //map中存放服务器返回的信息
         NSLog(@"HERE IS MAP:\n%@",map);
@@ -64,8 +64,10 @@
 {
     if (sender.direction == UISwipeGestureRecognizerDirectionRight) {
         NSLog(@"left");
-        [self dismissViewControllerAnimated:YES completion:nil];
-    }
+        UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        ViewController *nextPage = [mainStoryboard instantiateViewControllerWithIdentifier:@"ViewController"];
+        [nextPage setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
+        [self presentViewController:nextPage animated:YES completion:nil];    }
 }
 
 

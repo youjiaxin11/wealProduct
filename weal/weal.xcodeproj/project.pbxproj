@@ -24,6 +24,14 @@
 		37D5B3641C0FF32900BA9932 /* topics6.png in Resources */ = {isa = PBXBuildFile; fileRef = 37D5B35C1C0FF32900BA9932 /* topics6.png */; };
 		37D5B3651C0FF32900BA9932 /* topics7.png in Resources */ = {isa = PBXBuildFile; fileRef = 37D5B35D1C0FF32900BA9932 /* topics7.png */; };
 		37D5B3661C0FF32900BA9932 /* topics8.png in Resources */ = {isa = PBXBuildFile; fileRef = 37D5B35E1C0FF32900BA9932 /* topics8.png */; };
+		37D5B3711C0FF9BD00BA9932 /* ship1.png in Resources */ = {isa = PBXBuildFile; fileRef = 37D5B36A1C0FF9BD00BA9932 /* ship1.png */; };
+		37D5B3721C0FF9BD00BA9932 /* ship2.png in Resources */ = {isa = PBXBuildFile; fileRef = 37D5B36B1C0FF9BD00BA9932 /* ship2.png */; };
+		37D5B3731C0FF9BD00BA9932 /* ship3.png in Resources */ = {isa = PBXBuildFile; fileRef = 37D5B36C1C0FF9BD00BA9932 /* ship3.png */; };
+		37D5B3741C0FF9BD00BA9932 /* ship4.png in Resources */ = {isa = PBXBuildFile; fileRef = 37D5B36D1C0FF9BD00BA9932 /* ship4.png */; };
+		37D5B3751C0FF9BD00BA9932 /* ship5.png in Resources */ = {isa = PBXBuildFile; fileRef = 37D5B36E1C0FF9BD00BA9932 /* ship5.png */; };
+		37D5B3761C0FF9BD00BA9932 /* ship6.png in Resources */ = {isa = PBXBuildFile; fileRef = 37D5B36F1C0FF9BD00BA9932 /* ship6.png */; };
+		37D5B3771C0FF9BD00BA9932 /* ship7.png in Resources */ = {isa = PBXBuildFile; fileRef = 37D5B3701C0FF9BD00BA9932 /* ship7.png */; };
+		37D5B3791C0FF9DE00BA9932 /* 00-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 37D5B3781C0FF9DE00BA9932 /* 00-3.png */; };
 		37E9395C1C09C4EF00A57964 /* weal.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 37E9395B1C09C4EF00A57964 /* weal.sqlite */; };
 		37F83B481C0EEEA500BBF482 /* XYZDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F83B451C0EEEA500BBF482 /* XYZDrawView.m */; };
 		37F83B491C0EEEA500BBF482 /* XYZPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F83B471C0EEEA500BBF482 /* XYZPhoto.m */; };
@@ -120,6 +128,14 @@
 		37D5B35C1C0FF32900BA9932 /* topics6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topics6.png; sourceTree = "<group>"; };
 		37D5B35D1C0FF32900BA9932 /* topics7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topics7.png; sourceTree = "<group>"; };
 		37D5B35E1C0FF32900BA9932 /* topics8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topics8.png; sourceTree = "<group>"; };
+		37D5B36A1C0FF9BD00BA9932 /* ship1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ship1.png; sourceTree = "<group>"; };
+		37D5B36B1C0FF9BD00BA9932 /* ship2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ship2.png; sourceTree = "<group>"; };
+		37D5B36C1C0FF9BD00BA9932 /* ship3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ship3.png; sourceTree = "<group>"; };
+		37D5B36D1C0FF9BD00BA9932 /* ship4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ship4.png; sourceTree = "<group>"; };
+		37D5B36E1C0FF9BD00BA9932 /* ship5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ship5.png; sourceTree = "<group>"; };
+		37D5B36F1C0FF9BD00BA9932 /* ship6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ship6.png; sourceTree = "<group>"; };
+		37D5B3701C0FF9BD00BA9932 /* ship7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ship7.png; sourceTree = "<group>"; };
+		37D5B3781C0FF9DE00BA9932 /* 00-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "00-3.png"; sourceTree = "<group>"; };
 		37E9395B1C09C4EF00A57964 /* weal.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = weal.sqlite; sourceTree = "<group>"; };
 		37F83B441C0EEEA500BBF482 /* XYZDrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZDrawView.h; sourceTree = "<group>"; };
 		37F83B451C0EEEA500BBF482 /* XYZDrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZDrawView.m; sourceTree = "<group>"; };
@@ -267,6 +283,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		37D5B3691C0FF9B000BA9932 /* ships */ = {
+			isa = PBXGroup;
+			children = (
+				37D5B36A1C0FF9BD00BA9932 /* ship1.png */,
+				37D5B36B1C0FF9BD00BA9932 /* ship2.png */,
+				37D5B36C1C0FF9BD00BA9932 /* ship3.png */,
+				37D5B36D1C0FF9BD00BA9932 /* ship4.png */,
+				37D5B36E1C0FF9BD00BA9932 /* ship5.png */,
+				37D5B36F1C0FF9BD00BA9932 /* ship6.png */,
+				37D5B3701C0FF9BD00BA9932 /* ship7.png */,
+			);
+			name = ships;
+			sourceTree = "<group>";
+		};
 		37F83B4A1C0EEEAF00BBF482 /* topics */ = {
 			isa = PBXGroup;
 			children = (
@@ -363,8 +393,9 @@
 		F46C982C1BEC7DD10085633A /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				37D5B3691C0FF9B000BA9932 /* ships */,
 				37F83B4A1C0EEEAF00BBF482 /* topics */,
-				F48061221C0C3571008B3881 /* pictures */,
+				F48061221C0C3571008B3881 /* backgrounds */,
 				37E9395B1C09C4EF00A57964 /* weal.sqlite */,
 			);
 			name = Resource;
@@ -478,9 +509,10 @@
 			name = Control;
 			sourceTree = "<group>";
 		};
-		F48061221C0C3571008B3881 /* pictures */ = {
+		F48061221C0C3571008B3881 /* backgrounds */ = {
 			isa = PBXGroup;
 			children = (
+				37D5B3781C0FF9DE00BA9932 /* 00-3.png */,
 				37F83B5B1C0EF27000BBF482 /* 00-2.png */,
 				F480708A1C0D291700BB0C48 /* 00.png */,
 				F48061231C0C35A3008B3881 /* 01.png */,
@@ -492,7 +524,7 @@
 				F48070851C0D27FF00BB0C48 /* 06.png */,
 				F48070841C0D27FF00BB0C48 /* 06-2.png */,
 			);
-			name = pictures;
+			name = backgrounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -598,8 +630,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37D5B3771C0FF9BD00BA9932 /* ship7.png in Resources */,
 				F48070891C0D27FF00BB0C48 /* 06.png in Resources */,
 				37D5B35F1C0FF32900BA9932 /* topics1.png in Resources */,
+				37D5B3731C0FF9BD00BA9932 /* ship3.png in Resources */,
 				37D5B3601C0FF32900BA9932 /* topics2.png in Resources */,
 				F48070881C0D27FF00BB0C48 /* 06-2.png in Resources */,
 				37D5B3631C0FF32900BA9932 /* topics5.png in Resources */,
@@ -607,17 +641,23 @@
 				37D5B3641C0FF32900BA9932 /* topics6.png in Resources */,
 				37E9395C1C09C4EF00A57964 /* weal.sqlite in Resources */,
 				F480612B1C0C3607008B3881 /* 03.png in Resources */,
+				37D5B3711C0FF9BD00BA9932 /* ship1.png in Resources */,
+				37D5B3721C0FF9BD00BA9932 /* ship2.png in Resources */,
 				37D5B3611C0FF32900BA9932 /* topics3.png in Resources */,
 				F46C98061BEC7BBE0085633A /* LaunchScreen.storyboard in Resources */,
+				37D5B3761C0FF9BD00BA9932 /* ship6.png in Resources */,
+				37D5B3741C0FF9BD00BA9932 /* ship4.png in Resources */,
 				F46C98031BEC7BBE0085633A /* Assets.xcassets in Resources */,
 				F48061261C0C35A3008B3881 /* 05.png in Resources */,
 				37D5B3651C0FF32900BA9932 /* topics7.png in Resources */,
 				37D5B3661C0FF32900BA9932 /* topics8.png in Resources */,
+				37D5B3751C0FF9BD00BA9932 /* ship5.png in Resources */,
 				F480612C1C0C3607008B3881 /* 04.png in Resources */,
 				37F83B5C1C0EF27000BBF482 /* 00-2.png in Resources */,
 				F480708B1C0D291700BB0C48 /* 00.png in Resources */,
 				F480612E1C0C3E75008B3881 /* 02.png in Resources */,
 				F48070861C0D27FF00BB0C48 /* 03-2.png in Resources */,
+				37D5B3791C0FF9DE00BA9932 /* 00-3.png in Resources */,
 				F48061251C0C35A3008B3881 /* 01.png in Resources */,
 				F46C98011BEC7BBE0085633A /* Main.storyboard in Resources */,
 			);
