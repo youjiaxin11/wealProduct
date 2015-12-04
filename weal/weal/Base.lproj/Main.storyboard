@@ -220,10 +220,52 @@
                     <view key="view" contentMode="scaleToFill" id="wdk-Hm-SYI">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="00-4.png" translatesAutoresizingMaskIntoConstraints="NO" id="6Sz-h4-2s1">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q4I-qA-94Q">
+                                <rect key="frame" x="410" y="555" width="205" height="46"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="Let me try" backgroundImage="button.png">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Sf-nx-GBy">
+                                <rect key="frame" x="194" y="555" width="171" height="46"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="Review" backgroundImage="button.png">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="reloadButtonAction:" destination="5Pg-wO-vte" eventType="touchUpInside" id="iAs-5K-enI"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n7b-vv-Gqb" userLabel="ZLSwipeableView" customClass="ZLSwipeableView">
+                                <rect key="frame" x="172" y="208" width="662" height="319"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yEz-Qm-VzX">
+                                <rect key="frame" x="687" y="571" width="30" height="30"/>
+                                <state key="normal" title="left"/>
+                                <connections>
+                                    <action selector="swipeLeftButtonAction:" destination="5Pg-wO-vte" eventType="touchUpInside" id="1jC-Il-SRz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ZJ-8f-rzN">
+                                <rect key="frame" x="772" y="571" width="32" height="30"/>
+                                <state key="normal" title="right"/>
+                                <connections>
+                                    <action selector="swipeRightButtonAction:" destination="5Pg-wO-vte" eventType="touchUpInside" id="cGB-TG-U0v"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                    <connections>
+                        <outlet property="swipeableView" destination="n7b-vv-Gqb" id="IQ8-X9-BUO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dur-Bn-uwj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -322,7 +364,7 @@
         <!--Resource Sentence-->
         <scene sceneID="sb3-FT-HTL">
             <objects>
-                <viewController storyboardIdentifier="RsourceSentence" useStoryboardIdentifierAsRestorationIdentifier="YES" id="c1Y-KV-bAT" customClass="ResourceSentence" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ResourceSentence" useStoryboardIdentifierAsRestorationIdentifier="YES" id="c1Y-KV-bAT" customClass="ResourceSentence" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RsK-j8-7dK"/>
                         <viewControllerLayoutGuide type="bottom" id="QDQ-OL-MHz"/>
@@ -563,9 +605,11 @@
     <resources>
         <image name="00-2.png" width="1257" height="811"/>
         <image name="00-3.png" width="1298" height="811"/>
+        <image name="00-4.png" width="1000" height="626"/>
         <image name="01.png" width="1192" height="746"/>
         <image name="02.png" width="1197" height="746"/>
         <image name="03.png" width="1198" height="744"/>
         <image name="06.png" width="1201" height="747"/>
+        <image name="button.png" width="205" height="41"/>
     </resources>
 </document>
