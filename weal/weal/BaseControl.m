@@ -65,5 +65,11 @@
     }
 }
 
-
+//register的页面提示
+- (void)registerPrompt:(NSString*)msg {
+    [self.view endEditing:YES];
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:msg delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    [alert show];
+}
 @end

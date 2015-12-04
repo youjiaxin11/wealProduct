@@ -40,4 +40,6 @@ typedef void(^ResponseCallback)(NSMutableDictionary*);
 //左滑和右滑的实现
 - (void)handleSwipes:(UISwipeGestureRecognizer *)sender;
 
+//register的页面提示
+- (void)registerPrompt:(NSString*)msg;
 @end
