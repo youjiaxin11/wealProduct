@@ -38,6 +38,8 @@
 		37D5B38C1C10267100BA9932 /* ZLSwipeableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D5B38A1C10267100BA9932 /* ZLSwipeableView.m */; };
 		37D5B38F1C10268A00BA9932 /* CardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D5B38E1C10268A00BA9932 /* CardView.m */; };
 		37D5B3921C10276800BA9932 /* UIColor+FlatColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D5B3911C10276800BA9932 /* UIColor+FlatColors.m */; };
+		37DAF9D91C2001C10077BDA8 /* 07.png in Resources */ = {isa = PBXBuildFile; fileRef = 37DAF9D71C2001C10077BDA8 /* 07.png */; };
+		37DAF9DA1C2001C10077BDA8 /* 08.png in Resources */ = {isa = PBXBuildFile; fileRef = 37DAF9D81C2001C10077BDA8 /* 08.png */; };
 		37E9395C1C09C4EF00A57964 /* weal.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 37E9395B1C09C4EF00A57964 /* weal.sqlite */; };
 		37F83B481C0EEEA500BBF482 /* XYZDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F83B451C0EEEA500BBF482 /* XYZDrawView.m */; };
 		37F83B491C0EEEA500BBF482 /* XYZPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F83B471C0EEEA500BBF482 /* XYZPhoto.m */; };
@@ -152,6 +154,8 @@
 		37D5B38E1C10268A00BA9932 /* CardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardView.m; sourceTree = "<group>"; };
 		37D5B3901C10276800BA9932 /* UIColor+FlatColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+FlatColors.h"; sourceTree = "<group>"; };
 		37D5B3911C10276800BA9932 /* UIColor+FlatColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+FlatColors.m"; sourceTree = "<group>"; };
+		37DAF9D71C2001C10077BDA8 /* 07.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 07.png; sourceTree = "<group>"; };
+		37DAF9D81C2001C10077BDA8 /* 08.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 08.png; sourceTree = "<group>"; };
 		37E9395B1C09C4EF00A57964 /* weal.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = weal.sqlite; sourceTree = "<group>"; };
 		37F83B441C0EEEA500BBF482 /* XYZDrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZDrawView.h; sourceTree = "<group>"; };
 		37F83B451C0EEEA500BBF482 /* XYZDrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZDrawView.m; sourceTree = "<group>"; };
@@ -573,6 +577,8 @@
 				F48061241C0C35A3008B3881 /* 05.png */,
 				F48070851C0D27FF00BB0C48 /* 06.png */,
 				F48070841C0D27FF00BB0C48 /* 06-2.png */,
+				37DAF9D71C2001C10077BDA8 /* 07.png */,
+				37DAF9D81C2001C10077BDA8 /* 08.png */,
 			);
 			name = backgrounds;
 			sourceTree = "<group>";
@@ -685,6 +691,7 @@
 				37D5B35F1C0FF32900BA9932 /* topics1.png in Resources */,
 				37D5B3731C0FF9BD00BA9932 /* ship3.png in Resources */,
 				37D5B3601C0FF32900BA9932 /* topics2.png in Resources */,
+				37DAF9DA1C2001C10077BDA8 /* 08.png in Resources */,
 				F48070881C0D27FF00BB0C48 /* 06-2.png in Resources */,
 				37D5B3631C0FF32900BA9932 /* topics5.png in Resources */,
 				37D5B3621C0FF32900BA9932 /* topics4.png in Resources */,
@@ -707,6 +714,7 @@
 				37F83B5C1C0EF27000BBF482 /* 00-2.png in Resources */,
 				37D5B3841C1025B800BA9932 /* button.png in Resources */,
 				F480708B1C0D291700BB0C48 /* 00.png in Resources */,
+				37DAF9D91C2001C10077BDA8 /* 07.png in Resources */,
 				F480612E1C0C3E75008B3881 /* 02.png in Resources */,
 				F48070861C0D27FF00BB0C48 /* 03-2.png in Resources */,
 				37D5B3791C0FF9DE00BA9932 /* 00-3.png in Resources */,

@@ -12,12 +12,16 @@
 #import "ZLSwipeableView.h"
 #import "UIColor+FlatColors.h"
 #import "CardView.h"
+#import "UploadPhoto.h"
+#import "UploadVideo.h"
 
 @interface ResourceWord () <ZLSwipeableViewDataSource, ZLSwipeableViewDelegate>
 @property (weak, nonatomic) IBOutlet ZLSwipeableView *swipeableView;
+@property (strong, nonatomic) IBOutlet UIButton *recordBtn;
+@property (strong, nonatomic) IBOutlet UIButton *paintBtn;
 
 @property (nonatomic, strong) NSArray *colors;
-@property (nonatomic) NSUInteger colorIndex;
+@property (nonatomic) NSInteger colorIndex;
 @end
 
 @implementation ResourceWord
@@ -73,8 +77,8 @@
 - (IBAction)reloadButtonAction:(UIButton *)sender {
     NSLog(@"colorIndex:%d",self.colorIndex);
     //if(self.colorIndex >= 4 && self.colorIndex<=16){
-        //self.colorIndex = self.colorIndex-4;
-        self.colorIndex = 0;
+        self.colorIndex = self.colorIndex-4;
+      //  self.colorIndex = 0;
         [self.swipeableView discardAllSwipeableViews];
         [self.swipeableView loadNextSwipeableViewsIfNeeded];
    // }
@@ -94,6 +98,9 @@
 
 #pragma mark - ZLSwipeableViewDataSource
 - (UIView *)nextViewForSwipeableView:(ZLSwipeableView *)swipeableView {
+    if (self.colorIndex<0) {
+        self.colorIndex = 0;
+    }
     if (self.colorIndex<self.colors.count) {
         CardView *view = [[CardView alloc] initWithFrame:swipeableView.bounds];
         view.cardColor = [self colorForName:self.colors[self.colorIndex]];
@@ -125,4 +132,28 @@
         [self presentViewController:nextPage animated:YES completion:nil];
     }
 }
+
+
+//let me try
+- (IBAction)letMeTryAction:(UIButton *)sender {
+    self.paintBtn.hidden = NO;
+    self.recordBtn.hidden = NO;
+    
+}
+//录音
+- (IBAction)recordAction:(UIButton *)sender {
+    self.recordBtn.hidden = YES;
+    self.paintBtn.hidden = YES;
+    
+}
+//画画
+- (IBAction)paintAction:(UIButton *)sender {
+    self.recordBtn.hidden = YES;
+    self.paintBtn.hidden = YES;
+    UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UploadPhoto *nextPage = [mainStoryboard instantiateViewControllerWithIdentifier:@"UploadPhoto"];
+    [nextPage setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
+    [self presentViewController:nextPage animated:YES completion:nil];
+}
+
 @end

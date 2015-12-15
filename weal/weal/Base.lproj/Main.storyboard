@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AFh-xE-GT4">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
@@ -250,6 +250,9 @@
                                 <state key="normal" title="Let me try" backgroundImage="button.png">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="letMeTryAction:" destination="5Pg-wO-vte" eventType="touchUpInside" id="g38-dN-TDa"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Sf-nx-GBy">
                                 <rect key="frame" x="194" y="555" width="171" height="46"/>
@@ -266,20 +269,22 @@
                                 <rect key="frame" x="172" y="208" width="662" height="319"/>
                                 <animations/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yEz-Qm-VzX">
-                                <rect key="frame" x="687" y="571" width="30" height="30"/>
-                                <animations/>
-                                <state key="normal" title="left"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8c6-dS-h5Z">
+                                <rect key="frame" x="693" y="563" width="30" height="30"/>
+                                <state key="normal" title="画画">
+                                    <color key="titleColor" red="0.95686274510000002" green="0.95054479410000003" blue="0.061078019650000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
-                                    <action selector="swipeLeftButtonAction:" destination="5Pg-wO-vte" eventType="touchUpInside" id="1jC-Il-SRz"/>
+                                    <action selector="paintAction:" destination="5Pg-wO-vte" eventType="touchUpInside" id="FRJ-NR-ltH"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ZJ-8f-rzN">
-                                <rect key="frame" x="772" y="571" width="32" height="30"/>
-                                <animations/>
-                                <state key="normal" title="right"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mZ5-SE-wKM">
+                                <rect key="frame" x="639" y="563" width="30" height="30"/>
+                                <state key="normal" title="录音">
+                                    <color key="titleColor" red="0.95686274510000002" green="0.95054479410000003" blue="0.061078019650000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
-                                    <action selector="swipeRightButtonAction:" destination="5Pg-wO-vte" eventType="touchUpInside" id="cGB-TG-U0v"/>
+                                    <action selector="recordAction:" destination="5Pg-wO-vte" eventType="touchUpInside" id="k1l-4j-jQ7"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -289,6 +294,8 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <connections>
+                        <outlet property="paintBtn" destination="8c6-dS-h5Z" id="M0s-qU-bkd"/>
+                        <outlet property="recordBtn" destination="mZ5-SE-wKM" id="6lo-yo-oAz"/>
                         <outlet property="swipeableView" destination="n7b-vv-Gqb" id="IQ8-X9-BUO"/>
                     </connections>
                 </viewController>
@@ -307,6 +314,11 @@
                     <view key="view" contentMode="scaleToFill" id="J7p-Gk-2K7">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="08.png" translatesAutoresizingMaskIntoConstraints="NO" id="r9a-5i-BjH">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                            </imageView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -376,11 +388,52 @@
                     <view key="view" contentMode="scaleToFill" id="0yj-Wg-oyc">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="00-4.png" translatesAutoresizingMaskIntoConstraints="NO" id="9hZ-re-iyq">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PGE-u0-CeN">
+                                <rect key="frame" x="397" y="554" width="205" height="46"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="Let me try" backgroundImage="button.png">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="letMeTryAction:" destination="c1Y-KV-bAT" eventType="touchUpInside" id="CCM-jY-8EH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="daM-9B-jLL">
+                                <rect key="frame" x="184" y="554" width="171" height="46"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="Review" backgroundImage="button.png">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="reloadButtonAction:" destination="c1Y-KV-bAT" eventType="touchUpInside" id="wsm-ma-Qir"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wwd-ZR-Aqx" userLabel="ZLSwipeableView" customClass="ZLSwipeableView">
+                                <rect key="frame" x="185" y="212" width="662" height="319"/>
+                            </view>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJU-kP-edC">
+                                <rect key="frame" x="625" y="562" width="30" height="30"/>
+                                <state key="normal" title="录音">
+                                    <color key="titleColor" red="0.95686274510000002" green="0.95054479410000003" blue="0.061078019650000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="recordAction:" destination="c1Y-KV-bAT" eventType="touchUpInside" id="Gsg-IQ-NBq"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                    <connections>
+                        <outlet property="recordBtn" destination="NJU-kP-edC" id="wYk-k6-uIn"/>
+                        <outlet property="swipeableView" destination="wwd-ZR-Aqx" id="85t-gT-AvD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ecn-eR-8ov" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -481,11 +534,52 @@
                     <view key="view" contentMode="scaleToFill" id="Z2b-a9-5dE">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="00-4.png" translatesAutoresizingMaskIntoConstraints="NO" id="1OV-Qs-B7t">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="04o-Gh-AEd" userLabel="ZLSwipeableView" customClass="ZLSwipeableView">
+                                <rect key="frame" x="156" y="218" width="662" height="319"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rof-KB-9hY">
+                                <rect key="frame" x="369" y="559" width="205" height="46"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="Let me try" backgroundImage="button.png">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="letMeTryAction:" destination="ZRQ-Ha-wYe" eventType="touchUpInside" id="7Rm-em-Mhj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m4e-fb-Iun">
+                                <rect key="frame" x="156" y="559" width="171" height="46"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="Review" backgroundImage="button.png">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="reloadButtonAction:" destination="ZRQ-Ha-wYe" eventType="touchUpInside" id="h27-2H-hkF"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nY6-fh-MKc">
+                                <rect key="frame" x="597" y="567" width="60" height="30"/>
+                                <state key="normal" title="小组创编">
+                                    <color key="titleColor" red="0.95686274510000002" green="0.95054479410000003" blue="0.061078019650000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="groupVideoAction:" destination="ZRQ-Ha-wYe" eventType="touchUpInside" id="miv-84-IwY"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                    <connections>
+                        <outlet property="groupVideoBtn" destination="nY6-fh-MKc" id="yjP-et-SAc"/>
+                        <outlet property="swipeableView" destination="04o-Gh-AEd" id="yft-si-Whr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Iw-LN-G8t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -502,6 +596,11 @@
                     <view key="view" contentMode="scaleToFill" id="3bH-uX-TWY">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="07.png" translatesAutoresizingMaskIntoConstraints="NO" id="VhX-UV-JQz">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                            </imageView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -565,11 +664,72 @@
                     <view key="view" contentMode="scaleToFill" id="187-Tc-2eR">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="00-4.png" translatesAutoresizingMaskIntoConstraints="NO" id="DmA-6n-BMw">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                            </imageView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cy8-0B-Zky">
+                                <rect key="frame" x="651" y="561" width="30" height="30"/>
+                                <state key="normal" title="画画">
+                                    <color key="titleColor" red="0.95686274510000002" green="0.95054479410000003" blue="0.061078019650000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="paintAction:" destination="wue-lc-VhY" eventType="touchUpInside" id="AFJ-jk-REL"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0f6-vS-OLl">
+                                <rect key="frame" x="597" y="561" width="30" height="30"/>
+                                <state key="normal" title="录音">
+                                    <color key="titleColor" red="0.95686274510000002" green="0.95054479410000003" blue="0.061078019650000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="recordAction:" destination="wue-lc-VhY" eventType="touchUpInside" id="D8E-CJ-XAY"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k1z-Zc-7QO">
+                                <rect key="frame" x="707" y="561" width="60" height="30"/>
+                                <state key="normal" title="小组创编">
+                                    <color key="titleColor" red="0.95686274510000002" green="0.95054479410000003" blue="0.061078019650000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="groupVideoAction:" destination="wue-lc-VhY" eventType="touchUpInside" id="BZ8-Vq-Pwn"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="num-1z-dM8" userLabel="ZLSwipeableView" customClass="ZLSwipeableView">
+                                <rect key="frame" x="150" y="206" width="662" height="319"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WTO-TZ-C2m">
+                                <rect key="frame" x="150" y="553" width="171" height="46"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="Review" backgroundImage="button.png">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="reloadButtonAction:" destination="wue-lc-VhY" eventType="touchUpInside" id="7AC-rA-f6Y"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="slR-82-Ogz">
+                                <rect key="frame" x="364" y="553" width="205" height="46"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="Let me try" backgroundImage="button.png">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="letMeTryAction:" destination="wue-lc-VhY" eventType="touchUpInside" id="8wu-9a-2KE"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                    <connections>
+                        <outlet property="groupVideoBtn" destination="k1z-Zc-7QO" id="eWl-lR-1pa"/>
+                        <outlet property="paintBtn" destination="cy8-0B-Zky" id="ixd-IR-eSj"/>
+                        <outlet property="recordBtn" destination="0f6-vS-OLl" id="veX-8h-Hla"/>
+                        <outlet property="swipeableView" destination="num-1z-dM8" id="OtA-hF-KkN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j2f-PR-nK9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -586,11 +746,72 @@
                     <view key="view" contentMode="scaleToFill" id="7p3-Wo-zv7">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="00-4.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ade-Bg-Avi">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                            </imageView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aat-rm-1V3">
+                                <rect key="frame" x="638" y="562" width="30" height="30"/>
+                                <state key="normal" title="画画">
+                                    <color key="titleColor" red="0.95686274510000002" green="0.95054479410000003" blue="0.061078019650000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="paintAction:" destination="Zs3-UQ-IV1" eventType="touchUpInside" id="h6g-Dd-ieP"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xRi-0n-yaJ">
+                                <rect key="frame" x="584" y="562" width="30" height="30"/>
+                                <state key="normal" title="录音">
+                                    <color key="titleColor" red="0.95686274510000002" green="0.95054479410000003" blue="0.061078019650000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="recordAction:" destination="Zs3-UQ-IV1" eventType="touchUpInside" id="ewX-Kk-ZF4"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hOI-hR-R8A" userLabel="ZLSwipeableView" customClass="ZLSwipeableView">
+                                <rect key="frame" x="138" y="204" width="662" height="319"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c47-9B-zdb">
+                                <rect key="frame" x="351" y="554" width="205" height="46"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="Let me try" backgroundImage="button.png">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="letMeTryAction:" destination="Zs3-UQ-IV1" eventType="touchUpInside" id="tGr-ic-1yO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="weR-Xm-Kxp">
+                                <rect key="frame" x="138" y="554" width="171" height="46"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="Review" backgroundImage="button.png">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="reloadButtonAction:" destination="Zs3-UQ-IV1" eventType="touchUpInside" id="Bzh-PM-gar"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rET-oJ-ays">
+                                <rect key="frame" x="695" y="562" width="60" height="30"/>
+                                <state key="normal" title="小组创编">
+                                    <color key="titleColor" red="0.95686274510000002" green="0.95054479410000003" blue="0.061078019650000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="groupVideoAction:" destination="Zs3-UQ-IV1" eventType="touchUpInside" id="9MG-l6-TJR"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                    <connections>
+                        <outlet property="groupVideoBtn" destination="rET-oJ-ays" id="Bwe-rL-Bx0"/>
+                        <outlet property="paintBtn" destination="Aat-rm-1V3" id="0CY-1Q-ZMW"/>
+                        <outlet property="recordBtn" destination="xRi-0n-yaJ" id="inv-qG-jwv"/>
+                        <outlet property="swipeableView" destination="hOI-hR-R8A" id="H7I-1i-Umj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="56Q-jW-JrZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -702,6 +923,8 @@
         <image name="02.png" width="1197" height="746"/>
         <image name="03-2.png" width="1197" height="747"/>
         <image name="06.png" width="1201" height="747"/>
+        <image name="07.png" width="997" height="628"/>
+        <image name="08.png" width="999" height="625"/>
         <image name="button.png" width="205" height="41"/>
     </resources>
 </document>
