@@ -24,6 +24,8 @@
 @synthesize  rank;//排行
 @synthesize loginTimes;
 @synthesize medal;//勋章
-@synthesize wordcount;//已学习单词个数
-@synthesize workcount;//上传作品个数
+@synthesize wordCount;//已学习单词个数
+@synthesize workCount;//上传作品个数
+@synthesize birthYear;//出生年份
+@synthesize createTime;
 @end

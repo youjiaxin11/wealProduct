@@ -12,44 +12,72 @@
 #import "ZLSwipeableView.h"
 #import "UIColor+FlatColors.h"
 #import "CardView.h"
+#import "UploadAudio.h"
 
 @interface ResourceSentence () <ZLSwipeableViewDataSource, ZLSwipeableViewDelegate>
 @property (weak, nonatomic) IBOutlet ZLSwipeableView *swipeableView;
 @property (strong, nonatomic) IBOutlet UIButton *recordBtn;
 
-@property (nonatomic, strong) NSArray *colors;
 @property (nonatomic) NSInteger colorIndex;
+@property (nonatomic) NSInteger count;
+@property (nonatomic, strong) NSArray *colorNames;
+@property (nonatomic, strong) NSMutableArray *colors;
+@property (nonatomic, strong) NSMutableArray *texts;
 @end
 
 @implementation ResourceSentence
-
+@synthesize userResourceSentence,wordResourceSentence;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.colorIndex = 0;
-    self.colors = @[
-                    @"Turquoise",
-                    @"Green Sea",
-                    @"Emerald",
-                    @"Nephritis",
-                    @"Peter River",
-                    @"Belize Hole",
-                    @"Amethyst",
-                    @"Wisteria",
-                    @"Wet Asphalt",
-                    @"Midnight Blue",
-                    @"Sun Flower",
-                    @"Orange",
-                    @"Carrot",
-                    @"Pumpkin",
-                    @"Alizarin",
-                    @"Pomegranate",
-                    @"Clouds",
-                    @"Silver",
-                    @"Concrete",
-                    @"Asbestos",
-                    ];
+    if (wordResourceSentence.sentence.count == 0) {
+        [self prompt:@"无资源"];
+    }else {
+    self.count = wordResourceSentence.sentence.count;//卡片个数
+    }
     
+    //设置颜色数组数据源
+    self.colorIndex = 0;
+    self.colorNames = @[
+                        @"Turquoise",
+                        @"Green Sea",
+                        @"Emerald",
+                        @"Nephritis",
+                        @"Peter River",
+                        @"Belize Hole",
+                        @"Amethyst",
+                        @"Wisteria",
+                        @"Wet Asphalt",
+                        @"Midnight Blue",
+                        @"Sun Flower",
+                        @"Orange",
+                        @"Carrot",
+                        @"Pumpkin",
+                        @"Alizarin",
+                        @"Pomegranate",
+                        @"Clouds",
+                        @"Silver",
+                        @"Concrete",
+                        @"Asbestos",
+                        ];
+    self.colors = [[NSMutableArray alloc]initWithCapacity:self.count];
+    for (int i = 0; i < self.count; i++) {
+        NSString *color;
+        int j = i;
+        if (j >= 20) {
+            j = j - 20;
+        }
+        color = [[NSString alloc]initWithString:self.colorNames[j]];
+        [self.colors addObject:color];
+    }
+    
+    //设置要现实的文字数组数据源
+    self.texts = [[NSMutableArray alloc]initWithCapacity:self.count];
+    for (int i = 0; i < self.count; i++) {
+        //NSString *text = [[NSString alloc]initWithString:[NSString stringWithFormat:@"%d",i]];
+        NSString *text = [wordResourceSentence.sentence objectAtIndex:i];
+        [self.texts addObject:text];
+    }
     // ZLSwipeableView *swipeableView = [[ZLSwipeableView alloc] initWithFrame:self.view.frame];
     // [self.view addSubview:swipeableView];
     
@@ -95,12 +123,17 @@
 
 #pragma mark - ZLSwipeableViewDataSource
 - (UIView *)nextViewForSwipeableView:(ZLSwipeableView *)swipeableView {
+    NSLog(@"!!!!!填充卡片view适配");
+    
     if (self.colorIndex<0) {
         self.colorIndex = 0;
     }
     if (self.colorIndex<self.colors.count) {
+        //在这里修改卡片的数据源
         CardView *view = [[CardView alloc] initWithFrame:swipeableView.bounds];
         view.cardColor = [self colorForName:self.colors[self.colorIndex]];
+        view.cardText = [self.texts objectAtIndex:self.colorIndex];
+        NSLog(@"填充text%@",[self.texts objectAtIndex:self.colorIndex]);
         self.colorIndex++;
         return view;
     }
@@ -125,6 +158,8 @@
         NSLog(@"left");
         UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         WordLearning *nextPage = [mainStoryboard instantiateViewControllerWithIdentifier:@"WordLearning"];
+        nextPage.userWordLearning = userResourceSentence;
+        nextPage.wordLeaning = wordResourceSentence;
         [nextPage setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
         [self presentViewController:nextPage animated:YES completion:nil];
     }
@@ -137,7 +172,13 @@
 }
 //录音
 - (IBAction)recordAction:(UIButton *)sender {
-    self.recordBtn.hidden = YES;
+  //  self.recordBtn.hidden = YES;
+    UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UploadAudio *nextPage = [mainStoryboard instantiateViewControllerWithIdentifier:@"UploadAudio"];
+    nextPage.userUploadAudio = userResourceSentence;
+    nextPage.wordAudio = wordResourceSentence;
+    [nextPage setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
+    [self presentViewController:nextPage animated:YES completion:nil];
     
 }
 @end

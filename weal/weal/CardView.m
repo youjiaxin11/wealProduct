@@ -9,6 +9,7 @@
 #import "CardView.h"
 
 @implementation CardView
+
 -(instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
@@ -42,6 +43,16 @@
     CGContextRef context = UIGraphicsGetCurrentContext();
     
     UIColor* cardColor = self.cardColor;
+    
+    //显示文字
+    UITextView *cardTextView = [[UITextView alloc] initWithFrame:CGRectMake(30,20,frameWidth-60,frameHeight-40)];
+    cardTextView.backgroundColor = [UIColor clearColor];
+    cardTextView.font = [UIFont fontWithName:@"Arial" size:30];
+ //   self.cardText = @"demo";
+    cardTextView.text = self.cardText;
+    [self addSubview:cardTextView];
+    
+    NSLog(@"this demo!!!");
     
     //// card1
     {

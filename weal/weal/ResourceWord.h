@@ -8,4 +8,6 @@
 
 #import "BaseControl.h"
 @interface ResourceWord: BaseControl
+@property (assign, nonatomic) User* userResourceWord;//当前登录用户
+@property (assign, nonatomic) Word* wordResourceWord;//当前单词实体
 @end

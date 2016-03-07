@@ -14,6 +14,8 @@
 #import "CardView.h"
 #import "UploadPhoto.h"
 #import "UploadVideo.h"
+#import "CardViewPic.h"
+#import "UploadAudio.h"
 
 @interface ResourceStory () <ZLSwipeableViewDataSource, ZLSwipeableViewDelegate>
 @property (weak, nonatomic) IBOutlet ZLSwipeableView *swipeableView;
@@ -21,39 +23,78 @@
 @property (strong, nonatomic) IBOutlet UIButton *paintBtn;
 @property (strong, nonatomic) IBOutlet UIButton *groupVideoBtn;
 
-@property (nonatomic, strong) NSArray *colors;
 @property (nonatomic) NSInteger colorIndex;
+
+@property (nonatomic) NSInteger count;
+@property (nonatomic, strong) NSMutableArray *colors;
+@property (nonatomic, strong) NSMutableArray *images;
+@property (nonatomic, strong) NSArray *colorNames;
 @end
 
 @implementation ResourceStory
-
+@synthesize userResourceStory,wordResourceStory;
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    self.colorIndex = 0;
-    self.colors = @[
-                    @"Turquoise",
-                    @"Green Sea",
-                    @"Emerald",
-                    @"Nephritis",
-                    @"Peter River",
-                    @"Belize Hole",
-                    @"Amethyst",
-                    @"Wisteria",
-                    @"Wet Asphalt",
-                    @"Midnight Blue",
-                    @"Sun Flower",
-                    @"Orange",
-                    @"Carrot",
-                    @"Pumpkin",
-                    @"Alizarin",
-                    @"Pomegranate",
-                    @"Clouds",
-                    @"Silver",
-                    @"Concrete",
-                    @"Asbestos",
-                    ];
     
+    // Do any additional setup after loading the view, typically from a nib.
+    
+    if (wordResourceStory.dialogue.count == 0) {
+        [self prompt:@"无资源"];
+    }else {
+    self.count = wordResourceStory.dialogue.count;//卡片个数
+    }
+    
+    NSLog(@"self count story:%d", self.count);
+    
+    //设置颜色数组数据源
+    self.colorIndex = 0;
+    self.colorNames = @[
+                        @"Turquoise",
+                        @"Green Sea",
+                        @"Emerald",
+                        @"Nephritis",
+                        @"Peter River",
+                        @"Belize Hole",
+                        @"Amethyst",
+                        @"Wisteria",
+                        @"Wet Asphalt",
+                        @"Midnight Blue",
+                        @"Sun Flower",
+                        @"Orange",
+                        @"Carrot",
+                        @"Pumpkin",
+                        @"Alizarin",
+                        @"Pomegranate",
+                        @"Clouds",
+                        @"Silver",
+                        @"Concrete",
+                        @"Asbestos",
+                        ];
+    self.colors = [[NSMutableArray alloc]initWithCapacity:self.count];
+    for (int i = 0; i < self.count; i++) {
+        NSString *color;
+        int j = i;
+        if (j >= 20) {
+            j = j - 20;
+        }
+        color = [[NSString alloc]initWithString:self.colorNames[j]];
+        [self.colors addObject:color];
+    }
+    
+    //设置要现实的文字数组数据源
+    self.images = [[NSMutableArray alloc]initWithCapacity:self.count];
+    for (int i = 0; i < self.count; i++) {
+        NSString* urlstr = [root_url stringByAppendingString:wordResourceStory.dialogue[i]];
+        NSLog(@"urlstr%@",urlstr);
+        NSURL *url = [NSURL URLWithString:urlstr];
+        UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:url]];
+        if (image != nil) {
+            [self.images addObject:image];
+        }else {
+            NSLog(@"第%d张图片读取失败",i+1);
+        }
+    }
+//
     // ZLSwipeableView *swipeableView = [[ZLSwipeableView alloc] initWithFrame:self.view.frame];
     // [self.view addSubview:swipeableView];
     
@@ -99,12 +140,17 @@
 
 #pragma mark - ZLSwipeableViewDataSource
 - (UIView *)nextViewForSwipeableView:(ZLSwipeableView *)swipeableView {
+    NSLog(@"!!!!!填充卡片view适配");
+
     if (self.colorIndex<0) {
         self.colorIndex = 0;
     }
     if (self.colorIndex<self.colors.count) {
-        CardView *view = [[CardView alloc] initWithFrame:swipeableView.bounds];
+        //在这里修改卡片的数据源
+        CardViewPic *view = [[CardViewPic alloc] initWithFrame:swipeableView.bounds];
         view.cardColor = [self colorForName:self.colors[self.colorIndex]];
+        view.cardImage = [self.images objectAtIndex:self.colorIndex];
+
         self.colorIndex++;
         return view;
     }
@@ -129,6 +175,8 @@
         NSLog(@"left");
         UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         WordLearning *nextPage = [mainStoryboard instantiateViewControllerWithIdentifier:@"WordLearning"];
+        nextPage.userWordLearning = userResourceStory;
+        nextPage.wordLeaning = wordResourceStory;
         [nextPage setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
         [self presentViewController:nextPage animated:YES completion:nil];
     }
@@ -143,31 +191,38 @@
 }
 //录音
 - (IBAction)recordAction:(UIButton *)sender {
-    self.recordBtn.hidden = YES;
-    self.paintBtn.hidden = YES;
-    self.groupVideoBtn.hidden = YES;
+  //  self.recordBtn.hidden = YES;
+  //  self.paintBtn.hidden = YES;
+   // self.groupVideoBtn.hidden = YES;
+    UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UploadAudio *nextPage = [mainStoryboard instantiateViewControllerWithIdentifier:@"UploadAudio"];
+    nextPage.userUploadAudio = userResourceStory;
+    nextPage.wordAudio = wordResourceStory;
+    [nextPage setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
+    [self presentViewController:nextPage animated:YES completion:nil];
     
 }
 //画画
 - (IBAction)paintAction:(UIButton *)sender {
-    self.recordBtn.hidden = YES;
-    self.paintBtn.hidden = YES;
-    self.groupVideoBtn.hidden = YES;
+  //  self.recordBtn.hidden = YES;
+  //  self.paintBtn.hidden = YES;
+  //  self.groupVideoBtn.hidden = YES;
     UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UploadPhoto *nextPage = [mainStoryboard instantiateViewControllerWithIdentifier:@"UploadPhoto"];
+    nextPage.userUploadPhoto = userResourceStory;
     [nextPage setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
     [self presentViewController:nextPage animated:YES completion:nil];
 }
 //小组创编
 
 - (IBAction)groupVideoAction:(UIButton *)sender {
-    self.recordBtn.hidden = YES;
-    self.paintBtn.hidden = YES;
-    self.groupVideoBtn.hidden = YES;
+ //   self.recordBtn.hidden = YES;
+ //   self.paintBtn.hidden = YES;
+ //   self.groupVideoBtn.hidden = YES;
     UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
     UploadVideo *nextPage = [mainStoryboard instantiateViewControllerWithIdentifier:@"UploadVideo"];
-    
+    nextPage.userUploadVideo = userResourceStory;
     [nextPage setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
     
     [self presentViewController:nextPage animated:YES completion:nil];

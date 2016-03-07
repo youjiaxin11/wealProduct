@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "UploadVideo.h"
 @implementation UploadVideo
+@synthesize userUploadVideo;
 
 //左滑返回上一页
 - (void)handleSwipes:(UISwipeGestureRecognizer *)sender

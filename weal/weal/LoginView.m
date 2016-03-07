@@ -15,6 +15,8 @@
 @implementation LoginView
 @synthesize lgnBtn,lgnInput,rgtBtn,pwdInput;
 
+static User *user;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     if(_fromRegister){
@@ -32,8 +34,15 @@
         NSString *message = @"请填写全部信息";
         [self prompt:message];
     }else{
-        [self btnClick:@"/mobile/user/login.html"];
+        [self btnClick:@"mobile/ios/user/login.html"];
     }
+//    //跳转
+//    UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//    StarScreen *nextPage = [mainStoryboard instantiateViewControllerWithIdentifier:@"StarScreen"];
+//    // nextPage.user = user;
+//    [nextPage setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
+//    [self presentViewController:nextPage animated:YES completion:nil];
+    
 }
 
 - (void)btnClick:(NSString*)url {
@@ -51,10 +60,37 @@
         if (status == 1) {
             lgnBtn.backgroundColor = [UIColor clearColor];
             lgnBtn.enabled = true;
+            
+            NSMutableDictionary *result = [map objectForKey:@"result"];
+            NSMutableDictionary *data = [[result objectForKey:@"data"] lastObject];
+            NSLog(@"data\n%@",data);
+
+            //接收user全部信息
+            User *user = [[User alloc]init];
+            user.userId = (NSString*)[data objectForKey:@"userId"];
+            user.loginName = (NSString*)[data objectForKey:@"userName"];
+            user.password = (NSString*)[data objectForKey:@"password"];
+            user.realName = (NSString*)[data objectForKey:@"realName"];
+            user.sex = [(NSNumber*)[data objectForKey:@"sex"] intValue];
+            user.role = [(NSNumber*)[data objectForKey:@"role"] intValue];
+            user.school = [(NSNumber*)[data objectForKey:@"school"] intValue];
+            user.grade = [(NSNumber*)[data objectForKey:@"grade"] intValue];
+            user.classNum = [(NSNumber*)[data objectForKey:@"classNumber"] intValue];
+            user.golden = [(NSNumber*)[data objectForKey:@"golden"] intValue];
+            user.medal = [(NSNumber*)[data objectForKey:@"medal"] intValue];
+            user.rank = [(NSNumber*)[data objectForKey:@"rank"] intValue];
+            user.loginTimes = [(NSNumber*)[data objectForKey:@"loginTimes"] intValue];
+            user.wordCount = [(NSNumber*)[data objectForKey:@"wordCount"] intValue];
+            user.workCount = [(NSNumber*)[data objectForKey:@"workCount"] intValue];
+            user.birthYear = [(NSNumber*)[data objectForKey:@"birthYear"] intValue];
+            user.createTime = (NSString*)[data objectForKey:@"createTime"];
+            
+            NSLog(@"HERE IS USER:\n%@",user);
+            
             //跳转
             UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             StarScreen *nextPage = [mainStoryboard instantiateViewControllerWithIdentifier:@"StarScreen"];
-           // nextPage.user = user;
+            nextPage.user = user;
             [nextPage setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
             [self presentViewController:nextPage animated:YES completion:nil];
         }else{

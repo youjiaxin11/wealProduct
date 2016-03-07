@@ -21,7 +21,8 @@
 #define load_fail_msg @"很抱歉，网络不给力，加载数据失败了>.<"
 
 //#define root_url @"http://192.168.0.114:8080/tck_ios_server"
-#define root_url @"http://192.168.0.114:8088/iqasweb"
+//#define root_url @"http://172.19.203.92:8080/iqasweb"
+//#define root_url @"http://172.19.203.170:8080/iqasweb"
 
 
 enum RequestType {
@@ -59,5 +60,29 @@ enum RequestType {
 - (void)requestTck:(ResponseCallback)_callback is_loading:(BOOL)is_loading is_backup:(BOOL)is_backup is_solveFail:(BOOL)is_solveFail _frequency:(int)_frequency;
 
 
+
+#pragma mark 上传文件的构造方法
+#pragma _partUrl 接口路径，只需要后面一截
+#pragma _control 控制器的实例
+- (id)initWithUpload:(NSString*)_partUrl _control:(BaseControl*)_control;
+
+#pragma mark 请求上传文件
+#pragma _callback 回调函数的block
+#pragma _filePath 完整的文件路径
+#pragma is_loading 如果为yes就表示要开启一个UIActivityIndicatorView
+- (void)requestUpload:(ResponseCallback)_callback _filePath:(NSString*)_filePath is_loading:(BOOL)is_loading;
+
+#pragma mark 请求上传文件
+#pragma _callback 回调函数的block
+#pragma _data 把文件转换成数据
+#pragma _fileName 文件名
+#pragma is_loading 如果为yes就表示要开启一个UIActivityIndicatorView
+- (void)requestUpload:(ResponseCallback)_callback _data:(NSData*)_data _fileName:(NSString*)_fileName is_loading:(BOOL)is_loading;
+
+#pragma mark 判断设备能否上网
++ (BOOL)isNet;
+
+#pragma mark 把map转换成接口参数格式的字符串
++ (NSString*)mapToParam:(NSMutableDictionary*)map;
 @end
 

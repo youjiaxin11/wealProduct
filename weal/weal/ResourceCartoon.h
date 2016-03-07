@@ -8,4 +8,7 @@
 
 #import "BaseControl.h"
 @interface ResourceCartoon: BaseControl
+@property (assign, nonatomic) User* userResourceCartoon;//当前登录用户
+@property (assign, nonatomic) Word* wordResourceCartoon;//当前单词实体
+
 @end

@@ -11,7 +11,7 @@
 #import "WordLearning.h"
 
 @implementation TestView
-
+@synthesize userTestView;
 //左滑返回上一页
 - (void)handleSwipes:(UISwipeGestureRecognizer *)sender
 {
@@ -19,6 +19,7 @@
         NSLog(@"left");
         UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         WordLearning *nextPage = [mainStoryboard instantiateViewControllerWithIdentifier:@"WordLearning"];
+        nextPage.userWordLearning = userTestView;
         [nextPage setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
         [self presentViewController:nextPage animated:YES completion:nil];
     }

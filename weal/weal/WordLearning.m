@@ -16,6 +16,7 @@
 #import "ResourcePainting.h"
 #import "ResourceCartoon.h"
 #import "TestView.h"
+#import "ResourcePicture.h"
 
 #define IMAGEWIDTH 360
 #define IMAGEHEIGHT 480
@@ -25,10 +26,13 @@
 @end
 
 @implementation WordLearning
-
+@synthesize userWordLearning,thisWord,wordLeaning;
+Word *word;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    
     
     self.photos = [[NSMutableArray alloc]init];
     
@@ -70,9 +74,97 @@
     [singleTap setNumberOfTapsRequired:1];
     [self.view addGestureRecognizer:singleTap];
     
+    if (thisWord == nil||[thisWord isEqualToString:@""]) {
+        NSLog(@"单词为空");
+    }else{
+        if (wordLeaning == nil) {
+            [self getResource:@"mobile/ios/word/findWord.html"];
+        }else{
+            word = wordLeaning;
+        }
+        NSLog(@"thisword:%@", word.word);
+    }
+
+    
+    
     
 }
 
+- (void)getResource:(NSString*)url {
+    
+    NSString *param = [NSString stringWithFormat:@"text=%@",thisWord];
+    [self requestTck:url _param:param _callback:^(NSMutableDictionary *map){
+        //map中存放服务器返回的信息
+        NSLog(@"HERE IS MAP:\n%@",map);
+        NSObject *statusObj = [map objectForKey:@"status"];
+        int status = [(NSNumber*)statusObj intValue];
+        NSString *message = (NSString*)[map objectForKey:@"message"];
+        //status表示登录状态结果，1代表成功
+        if (status == 1) {
+            NSMutableDictionary *result = [map objectForKey:@"result"];
+            NSMutableDictionary *data = [[result objectForKey:@"data"] lastObject];
+            NSLog(@"word\n%@",data);
+            
+            word = [self getWord:data];
+            
+//            //测试用
+//            NSString* str2 =  (NSString*)[data objectForKey:@"pictruepath"];
+//            NSArray* ar2 = [[NSArray alloc]initWithArray:[self encodeUrl:str2]];
+//            NSLog(@"ar2:%@",ar2);
+//            word = [[Word alloc]init];
+//            word.picture = ar2;
+//            NSLog(@"word.picture:%@",word.picture);
+            
+        }else{
+            //提示错误
+            [self prompt:message];
+        }
+    } is_loading:YES is_backup:NO is_solveFail:YES _frequency:0];
+    
+}
+
+- (Word*)getWord:(NSMutableDictionary*)data{
+    //接收word全部信息
+    Word* word = [[Word alloc]init];
+    word.wordId = (NSString*)[data objectForKey:@"wordId"];
+    word.word = (NSString*)[data objectForKey:@"word"];
+    
+    NSString *str1,*str2,*str3,*str4,*str5,*str6;
+    str1 =  (NSString*)[data objectForKey:@"meaning"];
+    str2 =  (NSString*)[data objectForKey:@"picture"];
+    str3 =  (NSString*)[data objectForKey:@"sentence"];
+    str4 =  (NSString*)[data objectForKey:@"dialogue"];
+    str5 =  (NSString*)[data objectForKey:@"video"];
+    str6 =  (NSString*)[data objectForKey:@"picturebook"];
+    
+    NSArray* urlArray1 = [[NSArray alloc]initWithArray:[self encodeUrl:str1]];
+    NSArray* urlArray2 = [[NSArray alloc]initWithArray:[self encodeUrl:str2]];
+    NSArray* urlArray3 = [[NSArray alloc]initWithArray:[self encodeUrl:str3]];
+    NSArray* urlArray4 = [[NSArray alloc]initWithArray:[self encodeUrl:str4]];
+    NSArray* urlArray5 = [[NSArray alloc]initWithArray:[self encodeUrl:str5]];
+    NSArray* urlArray6 = [[NSArray alloc]initWithArray:[self encodeUrl:str6]];
+    
+    NSLog(@"urlArray4:%@",urlArray4);
+    
+    word.meaning = urlArray1;
+    word.picture = urlArray2;
+    word.sentence = urlArray3;
+    word.dialogue = urlArray4;
+    word.video = urlArray5;
+    word.picturebook = urlArray6;
+    
+    NSLog(@"HERE IS Word:\n%@",word);
+
+    return word;
+}
+
+- (NSArray*) encodeUrl:(NSString*)str {
+    //解析写在这里
+   // NSMutableArray* urlArray = [[NSMutableArray alloc]init];
+    
+    NSArray *array = [str componentsSeparatedByString:@"@"];
+    return array;
+}
 
 - (void)doubleTap {
     
@@ -167,28 +259,46 @@
             NSLog(@"跳转photoId:%d",photo.photoId);
             photo.state = XYZPhotoStateNormal;
             UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            if (photo.photoId == 1) {//单词
+            if (photo.photoId == 1) {//单词形和义
                 ResourceWord *nextPage = [mainStoryboard instantiateViewControllerWithIdentifier:@"ResourceWord"];
+                nextPage.userResourceWord = userWordLearning;
+                nextPage.wordResourceWord = word;
                 [nextPage setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
                 [self presentViewController:nextPage animated:YES completion:nil];
-            }else if (photo.photoId == 2) {//句子
+            }else if (photo.photoId == 3) {//句子
                 ResourceSentence *nextPage = [mainStoryboard instantiateViewControllerWithIdentifier:@"ResourceSentence"];
+                nextPage.userResourceSentence = userWordLearning;
+                nextPage.wordResourceSentence = word;
                 [nextPage setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
                 [self presentViewController:nextPage animated:YES completion:nil];
-            }else if (photo.photoId == 3) {//故事
+            }else if (photo.photoId == 4) {//段落
                 ResourceStory *nextPage = [mainStoryboard instantiateViewControllerWithIdentifier:@"ResourceStory"];
+                nextPage.userResourceStory = userWordLearning;
+                nextPage.wordResourceStory = word;
                 [nextPage setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
                 [self presentViewController:nextPage animated:YES completion:nil];
-            }else if (photo.photoId == 4) {//动画
+            }else if (photo.photoId == 5) {//视频动画
                 ResourceCartoon *nextPage = [mainStoryboard instantiateViewControllerWithIdentifier:@"ResourceCartoon"];
+                nextPage.userResourceCartoon = userWordLearning;
+                nextPage.wordResourceCartoon = word;
                 [nextPage setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
                 [self presentViewController:nextPage animated:YES completion:nil];
-            }else if (photo.photoId == 5) {//绘本
+            }else if (photo.photoId == 6) {//绘本
                 ResourcePainting *nextPage = [mainStoryboard instantiateViewControllerWithIdentifier:@"ResourcePainting"];
+                nextPage.userResourcePainting = userWordLearning;
+                nextPage.wordResourcePainting = word;
                 [nextPage setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
                 [self presentViewController:nextPage animated:YES completion:nil];
-            }else if (photo.photoId == 6) {//测试
-                TestView *nextPage = [mainStoryboard instantiateViewControllerWithIdentifier:@"TestView"];
+//            }else if (photo.photoId == 6) {//测试
+//                TestView *nextPage = [mainStoryboard instantiateViewControllerWithIdentifier:@"TestView"];
+//                [nextPage setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
+//                nextPage.userTestView = userWordLearning;
+//                [self presentViewController:nextPage animated:YES completion:nil];
+//            }
+            }else if (photo.photoId == 2) {//单词本身图片
+                ResourcePicture *nextPage = [mainStoryboard instantiateViewControllerWithIdentifier:@"ResourcePicture"];
+                nextPage.userResourcePicture = userWordLearning;
+                nextPage.wordResourcePicture = word;
                 [nextPage setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
                 [self presentViewController:nextPage animated:YES completion:nil];
             }
@@ -213,6 +323,7 @@
         NSLog(@"left");
         UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         WordGuide *nextPage = [mainStoryboard instantiateViewControllerWithIdentifier:@"WordGuide"];
+        nextPage.userWordGuide = userWordLearning;
         [nextPage setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
         [self presentViewController:nextPage animated:YES completion:nil];
     }

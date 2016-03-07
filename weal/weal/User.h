@@ -10,7 +10,7 @@
 
 @interface User : NSObject
 
-@property int userId;// 主键自增长
+@property NSString* userId;// 主键自增长
 @property NSString *loginName;// 登录名
 @property NSString *password;//密码
 @property NSString *realName;
@@ -23,6 +23,8 @@
 @property int medal;//勋章
 @property int rank;//排行
 @property int loginTimes;// 登陆次数
-@property int wordcount;//已学习单词个数
-@property int workcount;//上传作品个数
+@property int wordCount;//已学习单词个数
+@property int workCount;//上传作品个数
+@property int birthYear;//出生年份
+@property NSString *createTime;
 @end

@@ -53,8 +53,8 @@
     }else if(firstPassword.text.length < 3 || firstPassword.text.length > 15){
         NSString *message = @"密码长度要在3～15之间";
         [self registerPrompt:message];
-    }else if(firstPassword.text == secondPassword.text) {
-        [self okClick:@"/mobile/user/register.html"];
+    }else if([firstPassword.text isEqualToString:secondPassword.text]) {
+        [self okClick:@"/mobile/ios/user/register.html"];
     }else{
         NSString *message = @"The two passwords differ";
         [self registerPrompt:message];
@@ -67,14 +67,15 @@
     
     NSInteger sexRow = [sexPicker selectedRowInComponent:0];
     NSInteger gradeRow = [gradePicker selectedRowInComponent:0];
-    NSString *gradeValue = [gradePickerArray objectAtIndex:gradeRow];
+  //  NSString *gradeValue = [gradePickerArray objectAtIndex:gradeRow];
+    NSInteger gradeValue = gradeRow + 1;
     NSLog(@"%ld",(long)sexRow);
-    NSLog(@"%@",gradeValue);
+    NSLog(@"%d",gradeValue);
     
     okBtn.backgroundColor = [UIColor grayColor];
     okBtn.enabled = false;
     
-    NSString *param = [NSString stringWithFormat:@"userName=%@&password=%@&sex=%ld&grade=%@", loginName.text,firstPassword.text,(long)sexRow,gradeValue];
+    NSString *param = [NSString stringWithFormat:@"userName=%@&password=%@&sex=%ld&grade=%ld", loginName.text,firstPassword.text,(long)sexRow,(long)gradeValue];
     [self requestTck:url _param:param _callback:^(NSMutableDictionary *map){
         
         //map中存放服务器返回的信息

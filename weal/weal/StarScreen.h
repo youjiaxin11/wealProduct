@@ -8,4 +8,7 @@
 
 #import "BaseControl.h"
 @interface StarScreen : BaseControl
+
+@property (assign, nonatomic) User* user;//当前登录用户
+
 @end

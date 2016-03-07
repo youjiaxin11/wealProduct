@@ -11,6 +11,19 @@
 #import <QuartzCore/QuartzCore.h>
 #import <QuartzCore/CoreAnimation.h>
 #import <MobileCoreServices/UTCoreTypes.h>
+#import "User.h"
+#import "Resource.h"
+#import <MediaPlayer/MediaPlayer.h>
+#import "VideoPlay.h"
+#import "MediaPlayer/MPMoviePlayerController.h"
+#import "Word.h"
+#import "TimeUtil.h"
+//#import "WebUtil.h"
+#import "UploadFile.h"
+
+#define root_url @"http://172.19.203.92:8080/iqasweb/"
+
+
 
 typedef void(^ResponseCallback)(NSMutableDictionary*);
 

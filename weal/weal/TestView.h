@@ -8,5 +8,6 @@
 
 #import "BaseControl.h"
 @interface TestView : BaseControl
+@property (assign, nonatomic) User* userTestView;//当前登录用户
 @end
 

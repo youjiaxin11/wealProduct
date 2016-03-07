@@ -21,11 +21,11 @@
 
 
 @implementation StarScreen
-
+@synthesize user;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    NSLog(@"star user ::%@", user.loginName );
     self.photos = [[NSMutableArray alloc]init];
 //    NSMutableArray *photoPaths = [[NSMutableArray alloc]init];
 //    
@@ -46,7 +46,7 @@
     
     //添加n个图片到界面中
    // if (photoPaths) {
-        for (int i = 0; i < 8; i++) {
+        for (int i = 0; i < 9; i++) {
             float X = arc4random()%((int)self.view.bounds.size.width - IMAGEWIDTH);
             float Y = arc4random()%((int)self.view.bounds.size.height - IMAGEHEIGHT);
             float W = IMAGEWIDTH;
@@ -195,6 +195,7 @@
             photo.state = XYZPhotoStateNormal;
             UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             WordGuide *nextPage = [mainStoryboard instantiateViewControllerWithIdentifier:@"WordGuide"];
+            nextPage.userWordGuide = user;
             [nextPage setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
             [self presentViewController:nextPage animated:YES completion:nil];
         }

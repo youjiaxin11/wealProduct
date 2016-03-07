@@ -8,4 +8,5 @@
 
 #import "BaseControl.h"
 @interface UploadWord: BaseControl
+@property (assign, nonatomic) User* userUploadWord;//当前登录用户
 @end

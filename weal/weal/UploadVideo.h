@@ -8,4 +8,5 @@
 
 #import "BaseControl.h"
 @interface UploadVideo: BaseControl
+@property (assign, nonatomic) User* userUploadVideo;//当前登录用户
 @end

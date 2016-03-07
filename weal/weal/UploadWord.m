@@ -9,4 +9,5 @@
 #import <Foundation/Foundation.h>
 #import "UploadWord.h"
 @implementation UploadWord
+@synthesize userUploadWord;
 @end
