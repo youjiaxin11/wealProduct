@@ -11,6 +11,7 @@
 #import "XYZPhoto.h"
 #import "WordGuide.h"
 #import "LoginView.h"
+#import "Robot.h"
 
 #define IMAGEWIDTH 360
 #define IMAGEHEIGHT 480
@@ -54,7 +55,7 @@
             
             XYZPhoto *photo = [[XYZPhoto alloc]initWithFrame:CGRectMake(X, Y, W, H)];
             //[photo updateImage:[UIImage imageWithContentsOfFile:photoPaths[i]]];
-            NSString *name1 = @"topics";
+            NSString *name1 = @"topic";
             NSString *name2 = [NSString stringWithFormat:@"%d.png", i+1];
             NSString *name3 = [name1 stringByAppendingString:name2];
             UIImage *photoImage = [UIImage imageNamed:name3];
@@ -222,6 +223,14 @@
         [nextPage setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
         [self presentViewController:nextPage animated:YES completion:nil];
     }
+}
+- (IBAction)RobotBtnAction:(id)sender {
+    UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    Robot *nextPage = [mainStoryboard instantiateViewControllerWithIdentifier:@"Robot"];
+    nextPage.userRobot = user;
+    [nextPage setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
+    [self presentViewController:nextPage animated:YES completion:nil];
+    
 }
 
 @end

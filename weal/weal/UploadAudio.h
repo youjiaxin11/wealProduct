@@ -7,6 +7,7 @@
 //
 
 #import "BaseControl.h"
+
 @interface UploadAudio: BaseControl
 @property (assign, nonatomic) User* userUploadAudio;//当前登录用户
 @property (assign, nonatomic) Word* wordAudio;//当前单词实体

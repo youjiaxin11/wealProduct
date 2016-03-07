@@ -8,4 +8,5 @@
 
 #import "BaseControl.h"
 @interface Vhelp: BaseControl
+@property (assign, nonatomic) User* userVhelp;//当前登录用户
 @end

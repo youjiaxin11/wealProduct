@@ -9,4 +9,5 @@
 
 #import "BaseControl.h"
 @interface LearningRecord : BaseControl
+@property (assign, nonatomic) User* userLearningRecord;//当前登录用户
 @end

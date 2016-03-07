@@ -21,13 +21,12 @@ NSString* str4;
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-//    NSString* timeNow = [TimeUtil getTimeNow];
+    NSString* timeNow = [TimeUtil getTimeNow];
 
 //    str1 = [userUploadAudio.loginName stringByAppendingString:@"+"];
-//    str2 = [str1 stringByAppendingString:[NSString stringWithFormat:@"%@+", wordAudio.wordId]];
-//    str3 = [str2 stringByAppendingString:timeNow];
- //   str4 = [str3 stringByAppendingString:@"+audio.caf"];
-    str4 = @"audio.caf";
+    str2 = @"";
+    str3 = [str2 stringByAppendingString:timeNow];
+    str4 = [str3 stringByAppendingString:@"+audio.caf"];
     [self setAudioSession];
 }
 

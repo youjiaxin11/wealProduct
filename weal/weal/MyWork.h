@@ -8,4 +8,5 @@
 
 #import "BaseControl.h"
 @interface MyWork: BaseControl
+@property (assign, nonatomic) User* userMywork;//当前登录用户
 @end
