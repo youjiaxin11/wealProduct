@@ -99,7 +99,7 @@ Word *word;
         NSObject *statusObj = [map objectForKey:@"status"];
         int status = [(NSNumber*)statusObj intValue];
         NSString *message = (NSString*)[map objectForKey:@"message"];
-        //status表示登录状态结果，1代表成功
+        //status表示结果，1代表成功
         if (status == 1) {
             NSMutableDictionary *result = [map objectForKey:@"result"];
             NSMutableDictionary *data = [[result objectForKey:@"data"] lastObject];

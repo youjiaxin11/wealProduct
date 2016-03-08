@@ -41,19 +41,7 @@ NSString* str4;
 
 //上传作品
 - (IBAction)uploadWorks:(id)sender{
-  //  [self prompt:@"已保存在本地，服务器正在建设中"];
-//    UIImage *image = [UIImage imageNamed:@"topics8.png"];
-//   // NSData *data = UIImagePNGRepresentation(image);
-//    WebUtil *util = [[WebUtil alloc] initWithUpload:@"/mobile/ios/work/uploadWork.html" _control:self];
-//    [util requestUpload:^(NSMutableDictionary *map) {
-//        if (![[map objectForKey:@"success"] boolValue]) {
-//            [self prompt:map[@"message"]];
-//            return;
-//        }
-//        self.fromMap[@"photo"] = map[@"data"][@"file"];
-//        //[self manage];
-//    } _data:UIImagePNGRepresentation(image) _fileName:str4 is_loading:YES];
-    
+
     NSLog(@"开始上传文件");
     UploadFile *upload = [[UploadFile alloc] init];
     

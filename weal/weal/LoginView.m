@@ -67,6 +67,7 @@ static User *user;
 
             //接收user全部信息
             User *user = [[User alloc]init];
+           // user = [self getUser:data];
             user.userId = (NSString*)[data objectForKey:@"userId"];
             user.loginName = (NSString*)[data objectForKey:@"userName"];
             user.password = (NSString*)[data objectForKey:@"password"];
