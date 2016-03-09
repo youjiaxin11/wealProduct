@@ -18,8 +18,7 @@
 #import "MediaPlayer/MPMoviePlayerController.h"
 #import "Word.h"
 #import "TimeUtil.h"
-//#import "WebUtil.h"
-#import "UploadFile.h"
+
 
 #define root_url @"http://172.19.203.92:8080/iqasweb/"
 

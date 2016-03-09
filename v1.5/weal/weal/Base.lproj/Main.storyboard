@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tHu-0p-zyX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="TrE-Zb-qja">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
@@ -76,48 +76,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P5p-tA-Ul3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="258" y="1073"/>
-        </scene>
-        <!--Test Wrong-->
-        <scene sceneID="iDZ-O0-8bD">
-            <objects>
-                <viewController storyboardIdentifier="TestWrong" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ILC-U6-lks" customClass="TestWrong" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="TGt-JR-XlX"/>
-                        <viewControllerLayoutGuide type="bottom" id="v1i-GY-hLr"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="yht-hZ-aN2">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Fg0-Ae-FOu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="258" y="1905"/>
-        </scene>
-        <!--Resource Amplify-->
-        <scene sceneID="0d4-DM-IIl">
-            <objects>
-                <viewController storyboardIdentifier="ResourceAmplify" useStoryboardIdentifierAsRestorationIdentifier="YES" id="l70-6E-4Pi" customClass="ResourceAmplify" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Wjb-PE-DYW"/>
-                        <viewControllerLayoutGuide type="bottom" id="0Oy-QN-T1p"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ssH-rP-pNf">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="A4b-QA-dsq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="258" y="2734"/>
         </scene>
         <!--Myfriend-->
         <scene sceneID="iwt-KD-HNX">
@@ -369,15 +327,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="12.png" translatesAutoresizingMaskIntoConstraints="NO" id="moe-iV-3yu">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="12-2.png" translatesAutoresizingMaskIntoConstraints="NO" id="moe-iV-3yu">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                             </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="388-0P-6RR">
+                                <rect key="frame" x="124" y="136" width="785" height="482"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="TrE-Zb-qja" id="MOb-fC-Dd9"/>
+                                    <outlet property="delegate" destination="TrE-Zb-qja" id="Twl-cQ-hzo"/>
+                                </connections>
+                            </tableView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KAF-zq-0zJ">
+                                <rect key="frame" x="124" y="618" width="785" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" id="gPT-Tg-bWw">
+                                        <textField key="customView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="q2b-qm-c3n">
+                                            <rect key="frame" x="20" y="7" width="676" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </barButtonItem>
+                                    <barButtonItem id="PA5-Kq-Dfe">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="SHB-LT-0Va">
+                                            <rect key="frame" x="706" y="7" width="66" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <state key="normal" title="Send">
+                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                    <connections>
+                        <outlet property="tableView" destination="388-0P-6RR" id="cpb-Y6-lso"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ol4-9d-65T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -761,48 +755,6 @@
             </objects>
             <point key="canvasLocation" x="3477" y="3562"/>
         </scene>
-        <!--Begin Learning-->
-        <scene sceneID="m9t-Qe-3Ro">
-            <objects>
-                <viewController storyboardIdentifier="BeginLearing" useStoryboardIdentifierAsRestorationIdentifier="YES" id="24o-br-zlk" customClass="BeginLearning" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="fPx-vw-vts"/>
-                        <viewControllerLayoutGuide type="bottom" id="3ha-du-p4x"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="7cM-wO-kxI">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="551-dr-Nb9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4533" y="242"/>
-        </scene>
-        <!--Test Right-->
-        <scene sceneID="hpO-g8-5Dw">
-            <objects>
-                <viewController storyboardIdentifier="TestRight" useStoryboardIdentifierAsRestorationIdentifier="YES" id="NC9-f3-Mnl" customClass="TestRight" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ZB4-ud-WUG"/>
-                        <viewControllerLayoutGuide type="bottom" id="2JH-by-U11"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="SYO-s1-ikI">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Vs4-iz-3dS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4533" y="1073"/>
-        </scene>
         <!--Resource Painting-->
         <scene sceneID="fPh-zY-iqD">
             <objects>
@@ -945,7 +897,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="56Q-jW-JrZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5593" y="1905"/>
+            <point key="canvasLocation" x="258" y="1905"/>
         </scene>
         <!--Upload Word-->
         <scene sceneID="3Sb-eY-RgC">
@@ -966,7 +918,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="59o-Xc-jma" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4533" y="2734"/>
+            <point key="canvasLocation" x="258" y="2734"/>
         </scene>
         <!--Register-->
         <scene sceneID="rZE-jf-UTk">
@@ -1103,7 +1055,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="45W-gg-vaV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6646" y="1905"/>
+            <point key="canvasLocation" x="5626" y="1905"/>
         </scene>
     </scenes>
     <resources>
@@ -1123,7 +1075,7 @@
         <image name="09-6.png" width="1024" height="768"/>
         <image name="10.png" width="1024" height="768"/>
         <image name="11.png" width="1024" height="768"/>
-        <image name="12.png" width="1024" height="768"/>
+        <image name="12-2.png" width="1024" height="768"/>
         <image name="13.png" width="1024" height="768"/>
     </resources>
 </document>
