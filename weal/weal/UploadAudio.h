@@ -21,4 +21,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *resume;//恢复录音
 @property (weak, nonatomic) IBOutlet UIButton *stop;//停止录音
 @property (weak, nonatomic) IBOutlet UIProgressView *audioPower;//音频波动
+
+@property (nonatomic,strong) AVAudioRecorder *UARecorder; //上传音频录音机
+@property (strong,nonatomic) NSString *UAFullPath;
 @end

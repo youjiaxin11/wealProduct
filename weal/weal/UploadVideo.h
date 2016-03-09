@@ -18,6 +18,10 @@
 @property (strong ,nonatomic)            AVPlayer *player;//播放器，用于录制
 @property (strong, nonatomic) IBOutlet UIImageView *contentimageview;
 
+@property (strong,nonatomic) AVPlayer *UVPlayer;
+@property (strong,nonatomic) NSString *UVFullPath;
 @property (strong, nonatomic) IBOutlet UIButton *addVideoBtn;
+@property (strong, nonatomic) IBOutlet UIButton *addUVBtn;
+
 @property (assign, nonatomic) User* userUploadVideo;//当前登录用户
 @end

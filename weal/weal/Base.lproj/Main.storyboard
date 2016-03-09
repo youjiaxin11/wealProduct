@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Jy8-dO-ARj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tHu-0p-zyX">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
@@ -131,7 +131,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="07.png" translatesAutoresizingMaskIntoConstraints="NO" id="G08-QQ-iNE">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="07-1.png" translatesAutoresizingMaskIntoConstraints="NO" id="G08-QQ-iNE">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                             </imageView>
                         </subviews>
@@ -334,6 +334,9 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3WP-65-Rzj">
                                 <rect key="frame" x="581" y="647" width="143" height="44"/>
+                                <connections>
+                                    <action selector="addUVVideo:" destination="GL3-hc-0Qh" eventType="touchUpInside" id="YNK-gG-8pP"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VKg-76-13x">
                                 <rect key="frame" x="162" y="173" width="710" height="403"/>
@@ -345,6 +348,7 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <connections>
+                        <outlet property="addUVBtn" destination="3WP-65-Rzj" id="7ze-lL-DmV"/>
                         <outlet property="addVideoBtn" destination="jJd-Um-yCd" id="2qe-y3-U40"/>
                         <outlet property="contentimageview" destination="VKg-76-13x" id="fVj-F9-MBK"/>
                     </connections>
@@ -470,13 +474,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="04-3.png" translatesAutoresizingMaskIntoConstraints="NO" id="i3m-Of-TrV">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="04-4.png" translatesAutoresizingMaskIntoConstraints="NO" id="i3m-Of-TrV">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TDI-Su-dWW">
                                 <rect key="frame" x="485" y="499" width="81" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="暂停">
+                                <state key="normal" title="Pause">
                                     <color key="titleColor" red="0.95686274510000002" green="0.95054479410000003" blue="0.061078019650000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -486,7 +490,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t1d-gu-LXW">
                                 <rect key="frame" x="353" y="499" width="81" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="开始">
+                                <state key="normal" title="Start">
                                     <color key="titleColor" red="0.95686274510000002" green="0.95054479410000003" blue="0.061078019650000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -510,9 +514,9 @@
                                 <color key="tintColor" red="0.95686274510000002" green="0.95054479410000003" blue="0.061078019650000002" alpha="1" colorSpace="calibratedRGB"/>
                             </progressView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dlR-Gy-Wx8">
-                                <rect key="frame" x="619" y="499" width="81" height="41"/>
+                                <rect key="frame" x="617" y="499" width="86" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="继续">
+                                <state key="normal" title="Continue">
                                     <color key="titleColor" red="0.95686274510000002" green="0.95054479410000003" blue="0.061078019650000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -686,6 +690,12 @@
                                     <action selector="addPhoto:" destination="vaY-ko-hxe" eventType="touchUpInside" id="ovr-f6-Qn2"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4JR-iG-obw">
+                                <rect key="frame" x="585" y="647" width="137" height="45"/>
+                                <connections>
+                                    <action selector="uploadPhoto:" destination="vaY-ko-hxe" eventType="touchUpInside" id="Tta-ka-ciQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -695,6 +705,7 @@
                     <connections>
                         <outlet property="addPhotoButton" destination="uFB-ya-gKk" id="eqN-OK-BcP"/>
                         <outlet property="contentImageView" destination="6Av-as-qQc" id="bgt-1U-J4j"/>
+                        <outlet property="uploadPhotoButton" destination="4JR-iG-obw" id="7Eb-fs-6N8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="969-es-wNo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1100,11 +1111,11 @@
         <image name="01.png" width="1024" height="768"/>
         <image name="04-1.png" width="1024" height="768"/>
         <image name="04-2.png" width="1024" height="768"/>
-        <image name="04-3.png" width="1024" height="768"/>
+        <image name="04-4.png" width="1024" height="768"/>
         <image name="05.png" width="1024" height="768"/>
         <image name="06-1.png" width="1024" height="768"/>
         <image name="06-2.png" width="1024" height="768"/>
-        <image name="07.png" width="1024" height="768"/>
+        <image name="07-1.png" width="1024" height="768"/>
         <image name="09-1.png" width="1024" height="768"/>
         <image name="09-2.png" width="1024" height="768"/>
         <image name="09-4.png" width="1024" height="768"/>

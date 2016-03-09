@@ -10,6 +10,7 @@
 #import "UploadAudio.h"
 #define kRecordAudioFile @"myRecord.caf"
 #import "WebUtil.h"
+#import "MKNetworkEngine.h"
 
 @implementation UploadAudio
 @synthesize userUploadAudio,wordAudio;
@@ -42,15 +43,21 @@ NSString* str4;
 //上传作品
 - (IBAction)uploadWorks:(id)sender{
 
-    NSLog(@"开始上传文件");
-    UploadFile *upload = [[UploadFile alloc] init];
+    NSLog(@"开始上传Audio文件");
+    // 获取沙盒目录
+    NSLog(@"Audio保存path:%@",_UAFullPath);
+    // 使用MKNetworkKit 上传图片和数据
     
-    NSString *urlString = [root_url stringByAppendingString:@"mobile/ios/work/uploadWork.html"];
-    
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"topics8.png" ofType:nil];
-    NSData *data = [NSData dataWithContentsOfFile:path];
-    
-    [upload uploadFileWithURL:[NSURL URLWithString:urlString] data:data];
+    NSDictionary* postvalues = [NSDictionary dictionaryWithObjectsAndKeys:@"mknetwork",@"file",nil];
+    MKNetworkEngine* UPEngine = [[MKNetworkEngine alloc] init] ;
+    MKNetworkOperation* UPOperation = [UPEngine operationWithURLString:@"http://172.19.203.8:8080/iqasweb/mobile/ios/work/uploadWork.html" params:postvalues httpMethod:@"POST"];
+    [UPOperation addFile:_UAFullPath forKey:@"file"];
+    [UPOperation addCompletionHandler:^(MKNetworkOperation *completedOperation) {
+        NSLog(@"Photo成功了?是的，成功了！");
+    } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
+        NSLog(@"mknetwork error : %@",error.debugDescription);
+    }];
+    [UPEngine enqueueOperation:UPOperation];
     
 }
 
@@ -77,6 +84,7 @@ NSString* str4;
     urlStr=[urlStr stringByAppendingPathComponent:str4];
     NSLog(@"file path:%@",urlStr);
     NSURL *url=[NSURL fileURLWithPath:urlStr];
+    _UAFullPath = urlStr;
     return url;
 }
 
@@ -221,6 +229,7 @@ NSString* str4;
  *  @param flag     是否成功
  */
 -(void)audioRecorderDidFinishRecording:(AVAudioRecorder *)recorder successfully:(BOOL)flag{
+    _UARecorder = recorder;
     if (![self.audioPlayer isPlaying]) {
         [self.audioPlayer play];
     }

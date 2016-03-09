@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "UploadPhoto.h"
+#import "MKNetworkEngine.h"
+
 @implementation UploadPhoto
 @synthesize userUploadPhoto,contentImageView,lastChosenMediaType;
 
@@ -31,6 +33,27 @@ NSString* str4_photo;
 - (IBAction)addPhoto:(id)sender {
     UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"请选择图片来源" message:@"" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"拍照",@"从手机相册选择", nil];
     [alert show];
+}
+- (IBAction)uploadPhoto:(id)sender {
+    NSLog(@"开始上传Photo文件");
+    //读取图片数据，设置压缩系数为0.5.
+    NSData *imageData = UIImageJPEGRepresentation(_UPImage, 0.5);
+    // 获取沙盒目录
+    NSLog(@"图片保存path:%@",_UPFullPath);
+    [imageData writeToFile:_UPFullPath atomically:NO];
+    // 使用MKNetworkKit 上传图片和数据
+    
+    NSDictionary* postvalues = [NSDictionary dictionaryWithObjectsAndKeys:@"mknetwork",@"file",nil];
+    MKNetworkEngine* UPEngine = [[MKNetworkEngine alloc] init] ;
+    MKNetworkOperation* UPOperation = [UPEngine operationWithURLString:@"http://172.19.203.8:8080/iqasweb/mobile/ios/work/uploadWork.html" params:postvalues httpMethod:@"POST"];
+    [UPOperation addFile:_UPFullPath forKey:@"file"];
+    [UPOperation addCompletionHandler:^(MKNetworkOperation *completedOperation) {
+        NSLog(@"Photo成功了?是的，成功了！");
+    } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
+        NSLog(@"mknetwork error : %@",error.debugDescription);
+    }];
+    [UPEngine enqueueOperation:UPOperation];
+
 }
 #pragma 拍照选择模块
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
@@ -59,6 +82,7 @@ NSString* str4_photo;
         UIImage *chosenImage=[info objectForKey:UIImagePickerControllerEditedImage];
         contentImageView.image = chosenImage;
         UIImageWriteToSavedPhotosAlbum(contentImageView.image, self, @selector(imageSavedToPhotosAlbum:didFinishSavingWithError:contexInfo:), nil );
+        _UPImage = chosenImage;
         
         //获取当前时间
         NSString* timeNow = [TimeUtil getTimeNow];
@@ -68,6 +92,7 @@ NSString* str4_photo;
         str4_photo = [str3_photo stringByAppendingString:@"+photo.png"];
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES);
         NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:str4_photo];   // 保存文件的名称
+        _UPFullPath = filePath;
         [UIImagePNGRepresentation(chosenImage)writeToFile: filePath  atomically:YES];
     }
     if([lastChosenMediaType isEqual:(NSString *) kUTTypeMovie])

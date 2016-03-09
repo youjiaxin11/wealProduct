@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "UploadVideo.h"
+#import "MKNetworkEngine.h"
+
 @implementation UploadVideo
 @synthesize userUploadVideo,lastChosenMediaType,urlStr,player,contentimageview;
 
@@ -56,6 +58,25 @@ NSString* str4_video;
 - (IBAction)addVideo:(id)sender {
     UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"请选择视频来源" message:@"" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"拍摄",@"从手机相册选择", nil];
     [alert show];
+}
+- (IBAction)addUVVideo:(id)sender {
+    NSLog(@"开始上传Video文件");
+    
+    // 获取沙盒目录
+    NSLog(@"Video保存path:%@",_UVFullPath);
+    
+    // 使用MKNetworkKit 上传图片和数据
+    NSDictionary* postvalues = [NSDictionary dictionaryWithObjectsAndKeys:@"mknetwork",@"file",nil];
+    MKNetworkEngine* UPEngine = [[MKNetworkEngine alloc] init] ;
+    MKNetworkOperation* UPOperation = [UPEngine operationWithURLString:@"http://172.19.203.8:8080/iqasweb/mobile/ios/work/uploadWork.html" params:postvalues httpMethod:@"POST"];
+    [UPOperation addFile:_UVFullPath forKey:@"file"];
+    [UPOperation addCompletionHandler:^(MKNetworkOperation *completedOperation) {
+        NSLog(@"Video成功了?是的，成功了！");
+    } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
+        NSLog(@"mknetwork error : %@",error.debugDescription);
+    }];
+    [UPEngine enqueueOperation:UPOperation];
+
 }
 #pragma 拍照选择模块
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
@@ -106,6 +127,7 @@ NSString* str4_video;
         //   [UIImagePNGRepresentation(chosenImage) writeToFile: filePath  atomically:YES];
         NSData  *myData = [[NSData  alloc] initWithContentsOfFile: urlStr ];
         [myData writeToFile:filePath atomically: YES ];
+        _UVFullPath = filePath;
         
         //录制完之后自动播放
         player=[AVPlayer playerWithURL:url];
@@ -113,6 +135,7 @@ NSString* str4_video;
         //    playerLayer.frame=self.contentimageview.frame;
         playerLayer.frame=CGRectMake(0, 0, self.contentimageview.frame.size.width, self.contentimageview.frame.size.height);
         [self.contentimageview.layer addSublayer:playerLayer];
+        _UVPlayer = player;
         [player play];
     }
     [picker dismissViewControllerAnimated:YES completion:nil];
