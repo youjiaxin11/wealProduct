@@ -9,4 +9,5 @@
 #import "BaseControl.h"
 @interface Myfriend: BaseControl
 @property (assign, nonatomic) User* userMyfriend;//当前登录用户
+@property (weak, nonatomic) IBOutlet UITableView *friendsTableView;
 @end

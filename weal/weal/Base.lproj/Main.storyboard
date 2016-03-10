@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="TrE-Zb-qja">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="PY3-va-S8o">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
@@ -89,15 +89,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="07-1.png" translatesAutoresizingMaskIntoConstraints="NO" id="G08-QQ-iNE">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="07-3.png" translatesAutoresizingMaskIntoConstraints="NO" id="G08-QQ-iNE">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                             </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qn2-zb-614">
+                                <rect key="frame" x="169" y="193" width="711" height="431"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="tHu-0p-zyX" id="FfF-bE-Nb6"/>
+                                    <outlet property="delegate" destination="tHu-0p-zyX" id="vEl-ZU-Rcb"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                    <connections>
+                        <outlet property="friendsTableView" destination="Qn2-zb-614" id="kAS-Jj-QTk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kjk-BV-6jK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -126,16 +137,16 @@
                                     <action selector="doClick:" destination="BW5-nX-Tpm" eventType="touchUpInside" id="kwE-in-3Nk"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  login name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cFh-t0-bFx">
-                                <rect key="frame" x="367" y="253" width="272" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="login name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cFh-t0-bFx">
+                                <rect key="frame" x="372" y="253" width="267" height="30"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  password   " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PoQ-St-WXS">
-                                <rect key="frame" x="367" y="302" width="272" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password   " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PoQ-St-WXS">
+                                <rect key="frame" x="372" y="302" width="267" height="30"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="70w-Ib-6yC">
@@ -358,6 +369,9 @@
                                             <state key="normal" title="Send">
                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <connections>
+                                                <action selector="sendBtnAction:" destination="TrE-Zb-qja" eventType="touchUpInside" id="SAE-t4-fIL"/>
+                                            </connections>
                                         </button>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </barButtonItem>
@@ -370,7 +384,9 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <connections>
+                        <outlet property="sendBtn" destination="SHB-LT-0Va" id="TrA-mc-0nL"/>
                         <outlet property="tableView" destination="388-0P-6RR" id="cpb-Y6-lso"/>
+                        <outlet property="textView" destination="q2b-qm-c3n" id="sW1-GF-qh5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ol4-9d-65T" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -936,32 +952,24 @@
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                                 <animations/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  password again" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yn2-G7-yvB">
-                                <rect key="frame" x="225" y="474" width="230" height="29"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password again" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yn2-G7-yvB">
+                                <rect key="frame" x="230" y="474" width="225" height="29"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UuG-gy-37x">
-                                <rect key="frame" x="225" y="434" width="225" height="27"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UuG-gy-37x">
+                                <rect key="frame" x="230" y="434" width="220" height="27"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  login name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cVL-j1-pUg">
-                                <rect key="frame" x="225" y="391" width="225" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="login name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cVL-j1-pUg">
+                                <rect key="frame" x="230" y="391" width="220" height="30"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H4j-87-86b">
-                                <rect key="frame" x="685" y="234" width="151" height="55"/>
-                                <animations/>
-                                <connections>
-                                    <outlet property="dataSource" destination="xfk-VK-jo9" id="MUL-Ma-vzQ"/>
-                                    <outlet property="delegate" destination="xfk-VK-jo9" id="ens-I1-9c8"/>
-                                </connections>
-                            </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0kx-SG-Jh5">
                                 <rect key="frame" x="615" y="462" width="128" height="41"/>
                                 <animations/>
@@ -970,11 +978,19 @@
                                 </connections>
                             </button>
                             <pickerView tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VCy-cO-tUi">
-                                <rect key="frame" x="685" y="304" width="151" height="55"/>
+                                <rect key="frame" x="685" y="306" width="151" height="55"/>
                                 <animations/>
                                 <connections>
                                     <outlet property="dataSource" destination="xfk-VK-jo9" id="NWb-rj-M9n"/>
                                     <outlet property="delegate" destination="xfk-VK-jo9" id="Nlj-lc-Pw9"/>
+                                </connections>
+                            </pickerView>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H4j-87-86b">
+                                <rect key="frame" x="685" y="230" width="151" height="55"/>
+                                <animations/>
+                                <connections>
+                                    <outlet property="dataSource" destination="xfk-VK-jo9" id="MUL-Ma-vzQ"/>
+                                    <outlet property="delegate" destination="xfk-VK-jo9" id="ens-I1-9c8"/>
                                 </connections>
                             </pickerView>
                         </subviews>
@@ -1067,7 +1083,7 @@
         <image name="05.png" width="1024" height="768"/>
         <image name="06-1.png" width="1024" height="768"/>
         <image name="06-2.png" width="1024" height="768"/>
-        <image name="07-1.png" width="1024" height="768"/>
+        <image name="07-3.png" width="1024" height="768"/>
         <image name="09-1.png" width="1024" height="768"/>
         <image name="09-2.png" width="1024" height="768"/>
         <image name="09-4.png" width="1024" height="768"/>

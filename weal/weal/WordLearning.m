@@ -74,6 +74,12 @@ Word *word;
     [singleTap setNumberOfTapsRequired:1];
     [self.view addGestureRecognizer:singleTap];
     
+    //测试用例！！！！
+    thisWord = @"boat";
+    ////
+    
+    
+    
     if (thisWord == nil||[thisWord isEqualToString:@""]) {
         NSLog(@"单词为空");
     }else{
@@ -82,7 +88,8 @@ Word *word;
         }else{
             word = wordLeaning;
         }
-        NSLog(@"thisword:%@", word.word);
+      //  NSLog(@"thisword:%@", word.word);
+
     }
 
     
@@ -92,7 +99,7 @@ Word *word;
 
 - (void)getResource:(NSString*)url {
     
-    NSString *param = [NSString stringWithFormat:@"text=%@",thisWord];
+    NSString *param = [NSString stringWithFormat:@"text=%@",@"boat"];
     [self requestTck:url _param:param _callback:^(NSMutableDictionary *map){
         //map中存放服务器返回的信息
         NSLog(@"HERE IS MAP:\n%@",map);
@@ -130,12 +137,12 @@ Word *word;
     word.word = (NSString*)[data objectForKey:@"word"];
     
     NSString *str1,*str2,*str3,*str4,*str5,*str6;
-    str1 =  (NSString*)[data objectForKey:@"meaning"];
-    str2 =  (NSString*)[data objectForKey:@"picture"];
-    str3 =  (NSString*)[data objectForKey:@"sentence"];
-    str4 =  (NSString*)[data objectForKey:@"dialogue"];
-    str5 =  (NSString*)[data objectForKey:@"video"];
-    str6 =  (NSString*)[data objectForKey:@"picturebook"];
+    str1 =  (NSString*)[data objectForKey:@"meanings"];
+    str2 =  (NSString*)[data objectForKey:@"pictures"];
+    str3 =  (NSString*)[data objectForKey:@"sentences"];
+    str4 =  (NSString*)[data objectForKey:@"dialogues"];
+    str5 =  (NSString*)[data objectForKey:@"videos"];
+    str6 =  (NSString*)[data objectForKey:@"picturebooks"];
     
     NSArray* urlArray1 = [[NSArray alloc]initWithArray:[self encodeUrl:str1]];
     NSArray* urlArray2 = [[NSArray alloc]initWithArray:[self encodeUrl:str2]];

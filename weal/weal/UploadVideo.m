@@ -72,6 +72,7 @@ NSString* str4_video;
     [UPOperation addFile:_UVFullPath forKey:@"file"];
     [UPOperation addCompletionHandler:^(MKNetworkOperation *completedOperation) {
         NSLog(@"Video成功了?是的，成功了！");
+        [self prompt:@"Well done!"];
     } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
         NSLog(@"mknetwork error : %@",error.debugDescription);
     }];

@@ -18,9 +18,9 @@
 #import "MediaPlayer/MPMoviePlayerController.h"
 #import "Word.h"
 #import "TimeUtil.h"
+#import "Friend.h"
 
-
-#define root_url @"http://172.19.203.92:8080/iqasweb/"
+#define root_url @"http://172.19.203.8:8080/iqasweb/"
 
 
 

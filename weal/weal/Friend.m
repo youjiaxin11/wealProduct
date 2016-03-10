@@ -12,6 +12,6 @@
 
 @implementation Friend
 
-@synthesize friendId, userId1, userId2, frendship;
+@synthesize friendId,friendName,golden;
 
 @end

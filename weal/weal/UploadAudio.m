@@ -54,6 +54,7 @@ NSString* str4;
     [UPOperation addFile:_UAFullPath forKey:@"file"];
     [UPOperation addCompletionHandler:^(MKNetworkOperation *completedOperation) {
         NSLog(@"Photo成功了?是的，成功了！");
+        [self prompt:@"Well done!"];
     } errorHandler:^(MKNetworkOperation *completedOperation, NSError *error) {
         NSLog(@"mknetwork error : %@",error.debugDescription);
     }];

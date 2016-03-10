@@ -48,11 +48,8 @@
         headerImage = [UIImage imageNamed:@"chatMe"];
         normalImage = [UIImage imageNamed:@"mychat_normal"];
         highlightedImage = [UIImage imageNamed:@"mychat_focused"];
-        
-        
         iconRect.origin.x = RMarginSize;
-        btnRect.origin.x = RBtnX;
-        
+        btnRect.origin.x = RBtnX;        
         insets = UIEdgeInsetsMake(0, 30, 0, 30);
     }
     else

@@ -13,7 +13,6 @@
 		37042DAA1C8D5833003B322A /* 04-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 37042D991C8D5833003B322A /* 04-2.png */; };
 		37042DAB1C8D5833003B322A /* 04-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 37042D9A1C8D5833003B322A /* 04-3.png */; };
 		37042DAD1C8D5833003B322A /* 06-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 37042D9C1C8D5833003B322A /* 06-1.png */; };
-		37042DAF1C8D5833003B322A /* 07.png in Resources */ = {isa = PBXBuildFile; fileRef = 37042D9E1C8D5833003B322A /* 07.png */; };
 		37042DB01C8D5833003B322A /* 08.png in Resources */ = {isa = PBXBuildFile; fileRef = 37042D9F1C8D5833003B322A /* 08.png */; };
 		37042DB81C8D591C003B322A /* 01.png in Resources */ = {isa = PBXBuildFile; fileRef = 37042DB71C8D591C003B322A /* 01.png */; };
 		37042DBF1C8D5D1C003B322A /* 09-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 37042DB91C8D5D1C003B322A /* 09-1.png */; };
@@ -79,7 +78,6 @@
 		3729DDB61C859C8C008E7324 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3729DDB51C859C8C008E7324 /* MediaPlayer.framework */; };
 		3729DDB91C859D7E008E7324 /* VideoPlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 3729DDB81C859D7E008E7324 /* VideoPlay.m */; };
 		375257A41C8FC05E0027ADF3 /* 07-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 375257A21C8FC05E0027ADF3 /* 07-1.png */; };
-		375257A51C8FC05E0027ADF3 /* 07-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 375257A31C8FC05E0027ADF3 /* 07-2.png */; };
 		375257BE1C8FD1FC0027ADF3 /* NSData+MKBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 375257AB1C8FD1FC0027ADF3 /* NSData+MKBase64.m */; };
 		375257BF1C8FD1FC0027ADF3 /* NSDate+RFC1123.m in Sources */ = {isa = PBXBuildFile; fileRef = 375257AD1C8FD1FC0027ADF3 /* NSDate+RFC1123.m */; };
 		375257C01C8FD1FC0027ADF3 /* NSDictionary+RequestEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 375257AF1C8FD1FC0027ADF3 /* NSDictionary+RequestEncoding.m */; };
@@ -89,6 +87,10 @@
 		375257C41C8FD1FC0027ADF3 /* MKNetworkEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 375257B71C8FD1FC0027ADF3 /* MKNetworkEngine.m */; };
 		375257C51C8FD1FC0027ADF3 /* MKNetworkOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 375257BA1C8FD1FC0027ADF3 /* MKNetworkOperation.m */; };
 		375257C61C8FD1FC0027ADF3 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 375257BD1C8FD1FC0027ADF3 /* Reachability.m */; };
+		379032021C911D720096C159 /* 07-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 379032011C911D720096C159 /* 07-3.png */; };
+		379032061C911F470096C159 /* FriendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 379032051C911F470096C159 /* FriendCell.m */; };
+		379032081C911FC00096C159 /* FriendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 379032071C911FC00096C159 /* FriendCell.xib */; };
+		3790320A1C91237F0096C159 /* 07-4.png in Resources */ = {isa = PBXBuildFile; fileRef = 379032091C91237F0096C159 /* 07-4.png */; };
 		37D1663B1C8FF3C800FF9429 /* 04-4.png in Resources */ = {isa = PBXBuildFile; fileRef = 37D1663A1C8FF3C800FF9429 /* 04-4.png */; };
 		37D166451C900ED300FF9429 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D1663E1C900ED300FF9429 /* Message.m */; };
 		37D166461C900ED300FF9429 /* HRChatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D166411C900ED300FF9429 /* HRChatCell.m */; };
@@ -184,7 +186,6 @@
 		37042D991C8D5833003B322A /* 04-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "04-2.png"; sourceTree = "<group>"; };
 		37042D9A1C8D5833003B322A /* 04-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "04-3.png"; sourceTree = "<group>"; };
 		37042D9C1C8D5833003B322A /* 06-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "06-1.png"; sourceTree = "<group>"; };
-		37042D9E1C8D5833003B322A /* 07.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 07.png; sourceTree = "<group>"; };
 		37042D9F1C8D5833003B322A /* 08.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 08.png; sourceTree = "<group>"; };
 		37042DB71C8D591C003B322A /* 01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 01.png; sourceTree = "<group>"; };
 		37042DB91C8D5D1C003B322A /* 09-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "09-1.png"; sourceTree = "<group>"; };
@@ -259,7 +260,6 @@
 		3729DDB71C859D7E008E7324 /* VideoPlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoPlay.h; sourceTree = "<group>"; };
 		3729DDB81C859D7E008E7324 /* VideoPlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoPlay.m; sourceTree = "<group>"; };
 		375257A21C8FC05E0027ADF3 /* 07-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "07-1.png"; sourceTree = "<group>"; };
-		375257A31C8FC05E0027ADF3 /* 07-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "07-2.png"; sourceTree = "<group>"; };
 		375257AA1C8FD1FC0027ADF3 /* NSData+MKBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+MKBase64.h"; sourceTree = "<group>"; };
 		375257AB1C8FD1FC0027ADF3 /* NSData+MKBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+MKBase64.m"; sourceTree = "<group>"; };
 		375257AC1C8FD1FC0027ADF3 /* NSDate+RFC1123.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+RFC1123.h"; sourceTree = "<group>"; };
@@ -279,6 +279,11 @@
 		375257BA1C8FD1FC0027ADF3 /* MKNetworkOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKNetworkOperation.m; sourceTree = "<group>"; };
 		375257BC1C8FD1FC0027ADF3 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		375257BD1C8FD1FC0027ADF3 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		379032011C911D720096C159 /* 07-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "07-3.png"; sourceTree = "<group>"; };
+		379032041C911F390096C159 /* FriendCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FriendCell.h; sourceTree = "<group>"; };
+		379032051C911F470096C159 /* FriendCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendCell.m; sourceTree = "<group>"; };
+		379032071C911FC00096C159 /* FriendCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendCell.xib; sourceTree = "<group>"; };
+		379032091C91237F0096C159 /* 07-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "07-4.png"; sourceTree = "<group>"; };
 		37D1663A1C8FF3C800FF9429 /* 04-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "04-4.png"; sourceTree = "<group>"; };
 		37D1663E1C900ED300FF9429 /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
 		37D1663F1C900ED300FF9429 /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
@@ -627,6 +632,16 @@
 			path = Reachability;
 			sourceTree = "<group>";
 		};
+		379032031C911EE10096C159 /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				379032041C911F390096C159 /* FriendCell.h */,
+				379032051C911F470096C159 /* FriendCell.m */,
+				379032071C911FC00096C159 /* FriendCell.xib */,
+			);
+			name = Friends;
+			sourceTree = "<group>";
+		};
 		37D1663C1C8FF49B00FF9429 /* other */ = {
 			isa = PBXGroup;
 			children = (
@@ -639,8 +654,6 @@
 		37D1663D1C900EBD00FF9429 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
-				37D1663E1C900ED300FF9429 /* Message.m */,
-				37D1663F1C900ED300FF9429 /* Message.h */,
 				37D166401C900ED300FF9429 /* HRChatCell.h */,
 				37D166411C900ED300FF9429 /* HRChatCell.m */,
 				37D166421C900ED300FF9429 /* HRChatCell.xib */,
@@ -823,6 +836,8 @@
 				F4760A851C083688005E50BA /* Friend.m */,
 				3729DDA31C854490008E7324 /* Word.m */,
 				3729DDA51C85449D008E7324 /* Word.h */,
+				37D1663E1C900ED300FF9429 /* Message.m */,
+				37D1663F1C900ED300FF9429 /* Message.h */,
 			);
 			name = Entity;
 			sourceTree = "<group>";
@@ -830,6 +845,7 @@
 		F46C982E1BEC7E6F0085633A /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				379032031C911EE10096C159 /* Friends */,
 				37D1663D1C900EBD00FF9429 /* Chat */,
 				375257A81C8FD1FC0027ADF3 /* MKNetworkKit */,
 				37D5B3861C10264100BA9932 /* cards */,
@@ -874,9 +890,9 @@
 				37042D9C1C8D5833003B322A /* 06-1.png */,
 				37042DF71C8D6941003B322A /* 06-2.png */,
 				37042E161C8F07FD003B322A /* 06-3.png */,
-				37042D9E1C8D5833003B322A /* 07.png */,
 				375257A21C8FC05E0027ADF3 /* 07-1.png */,
-				375257A31C8FC05E0027ADF3 /* 07-2.png */,
+				379032011C911D720096C159 /* 07-3.png */,
+				379032091C91237F0096C159 /* 07-4.png */,
 				37042D9F1C8D5833003B322A /* 08.png */,
 				37042DB91C8D5D1C003B322A /* 09-1.png */,
 				37042DBA1C8D5D1C003B322A /* 09-2.png */,
@@ -1006,7 +1022,6 @@
 				37042E101C8D81F7003B322A /* star2.png in Resources */,
 				37042DB81C8D591C003B322A /* 01.png in Resources */,
 				37042DE91C8D6653003B322A /* topic13.png in Resources */,
-				37042DAF1C8D5833003B322A /* 07.png in Resources */,
 				37042DEE1C8D6653003B322A /* topic18.png in Resources */,
 				37042E171C8F07FD003B322A /* 06-3.png in Resources */,
 				37D166531C900F8900FF9429 /* mychat_focused.png in Resources */,
@@ -1019,11 +1034,12 @@
 				37042DF31C8D6653003B322A /* topic23.png in Resources */,
 				37042DFB1C8D69AD003B322A /* 05.png in Resources */,
 				37D1665C1C9024B200FF9429 /* chatOther.png in Resources */,
-				375257A51C8FC05E0027ADF3 /* 07-2.png in Resources */,
 				37042DB01C8D5833003B322A /* 08.png in Resources */,
 				37D166521C900F8900FF9429 /* messages.plist in Resources */,
+				379032021C911D720096C159 /* 07-3.png in Resources */,
 				37042DEF1C8D6653003B322A /* topic19.png in Resources */,
 				37042E151C8D81F7003B322A /* star7.png in Resources */,
+				379032081C911FC00096C159 /* FriendCell.xib in Resources */,
 				37042DF41C8D6653003B322A /* topic24.png in Resources */,
 				37D166551C900F8900FF9429 /* other_focused.png in Resources */,
 				37042E011C8D7358003B322A /* 12.png in Resources */,
@@ -1075,6 +1091,7 @@
 				37D166591C90131C00FF9429 /* 12-2.png in Resources */,
 				37042DE61C8D6653003B322A /* topic10.png in Resources */,
 				F46C98011BEC7BBE0085633A /* Main.storyboard in Resources */,
+				3790320A1C91237F0096C159 /* 07-4.png in Resources */,
 				37042E031C8D73E3003B322A /* 13.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1107,6 +1124,7 @@
 				375257BF1C8FD1FC0027ADF3 /* NSDate+RFC1123.m in Sources */,
 				F4760A501C06AD47005E50BA /* ResourceAmplify.m in Sources */,
 				F4760A321C06A47C005E50BA /* WordGuide.m in Sources */,
+				379032061C911F470096C159 /* FriendCell.m in Sources */,
 				F4760A861C083688005E50BA /* Friend.m in Sources */,
 				F46C97FE1BEC7BBE0085633A /* ViewController.m in Sources */,
 				F4760A651C0827E6005E50BA /* MyWork.m in Sources */,
@@ -1304,7 +1322,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jiaxin You (KPF495G482)";
 				INFOPLIST_FILE = weal/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1317,7 +1335,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jiaxin You (KPF495G482)";
 				INFOPLIST_FILE = weal/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

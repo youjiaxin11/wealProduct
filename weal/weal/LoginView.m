@@ -47,8 +47,6 @@ static User *user;
 
 - (void)btnClick:(NSString*)url {
     
-    lgnBtn.backgroundColor = [UIColor grayColor];
-    lgnBtn.enabled = false;
     NSString *param = [NSString stringWithFormat:@"userName=%@&password=%@", lgnInput.text, pwdInput.text];
     [self requestTck:url _param:param _callback:^(NSMutableDictionary *map){
         //map中存放服务器返回的信息
@@ -58,8 +56,6 @@ static User *user;
         NSString *message = (NSString*)[map objectForKey:@"message"];
         //status表示登录状态结果，1代表成功
         if (status == 1) {
-            lgnBtn.backgroundColor = [UIColor clearColor];
-            lgnBtn.enabled = true;
             
             NSMutableDictionary *result = [map objectForKey:@"result"];
             NSMutableDictionary *data = [[result objectForKey:@"data"] lastObject];
@@ -95,8 +91,6 @@ static User *user;
             [nextPage setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
             [self presentViewController:nextPage animated:YES completion:nil];
         }else{
-            lgnBtn.backgroundColor = [UIColor clearColor];
-            lgnBtn.enabled = true;
             //提示错误
             [self prompt:message];
         }

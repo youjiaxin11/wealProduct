@@ -72,8 +72,7 @@
     NSLog(@"%ld",(long)sexRow);
     NSLog(@"%d",gradeValue);
     
-    okBtn.backgroundColor = [UIColor grayColor];
-    okBtn.enabled = false;
+
     
     NSString *param = [NSString stringWithFormat:@"userName=%@&password=%@&sex=%ld&grade=%ld", loginName.text,firstPassword.text,(long)sexRow,(long)gradeValue];
     [self requestTck:url _param:param _callback:^(NSMutableDictionary *map){
@@ -98,8 +97,7 @@
         }else{
             //提示错误信息
             [self prompt:message];
-            okBtn.backgroundColor = [UIColor clearColor];
-            okBtn.enabled = true;
+
         }
     } is_loading:YES is_backup:NO is_solveFail:YES _frequency:0];
 }

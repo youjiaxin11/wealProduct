@@ -50,8 +50,9 @@
 - (void)prompt:(NSString*)msg {
     [self.view endEditing:YES];
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:msg delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:msg delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
     [alert show];
+    
 }
 
 //左滑和右滑的实现
