@@ -114,6 +114,9 @@
 		37D5B38C1C10267100BA9932 /* ZLSwipeableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D5B38A1C10267100BA9932 /* ZLSwipeableView.m */; };
 		37D5B38F1C10268A00BA9932 /* CardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D5B38E1C10268A00BA9932 /* CardView.m */; };
 		37D5B3921C10276800BA9932 /* UIColor+FlatColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D5B3911C10276800BA9932 /* UIColor+FlatColors.m */; };
+		37E711DA1C9A6B0300CCED34 /* chatMe-76.png in Resources */ = {isa = PBXBuildFile; fileRef = 37E711D71C9A6B0300CCED34 /* chatMe-76.png */; };
+		37E711DB1C9A6B0300CCED34 /* chatMe-120.png in Resources */ = {isa = PBXBuildFile; fileRef = 37E711D81C9A6B0300CCED34 /* chatMe-120.png */; };
+		37E711DC1C9A6B0300CCED34 /* chatMe-152.png in Resources */ = {isa = PBXBuildFile; fileRef = 37E711D91C9A6B0300CCED34 /* chatMe-152.png */; };
 		37E9395C1C09C4EF00A57964 /* weal.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 37E9395B1C09C4EF00A57964 /* weal.sqlite */; };
 		37F83B481C0EEEA500BBF482 /* XYZDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F83B451C0EEEA500BBF482 /* XYZDrawView.m */; };
 		37F83B491C0EEEA500BBF482 /* XYZPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F83B471C0EEEA500BBF482 /* XYZPhoto.m */; };
@@ -313,6 +316,9 @@
 		37D5B38E1C10268A00BA9932 /* CardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardView.m; sourceTree = "<group>"; };
 		37D5B3901C10276800BA9932 /* UIColor+FlatColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+FlatColors.h"; sourceTree = "<group>"; };
 		37D5B3911C10276800BA9932 /* UIColor+FlatColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+FlatColors.m"; sourceTree = "<group>"; };
+		37E711D71C9A6B0300CCED34 /* chatMe-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chatMe-76.png"; sourceTree = "<group>"; };
+		37E711D81C9A6B0300CCED34 /* chatMe-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chatMe-120.png"; sourceTree = "<group>"; };
+		37E711D91C9A6B0300CCED34 /* chatMe-152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chatMe-152.png"; sourceTree = "<group>"; };
 		37E9395B1C09C4EF00A57964 /* weal.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = weal.sqlite; sourceTree = "<group>"; };
 		37F83B441C0EEEA500BBF482 /* XYZDrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZDrawView.h; sourceTree = "<group>"; };
 		37F83B451C0EEEA500BBF482 /* XYZDrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZDrawView.m; sourceTree = "<group>"; };
@@ -664,6 +670,9 @@
 		37D166491C900F7800FF9429 /* chat */ = {
 			isa = PBXGroup;
 			children = (
+				37E711D71C9A6B0300CCED34 /* chatMe-76.png */,
+				37E711D81C9A6B0300CCED34 /* chatMe-120.png */,
+				37E711D91C9A6B0300CCED34 /* chatMe-152.png */,
 				37D1665A1C9024B200FF9429 /* chatOther.png */,
 				37D1665B1C9024B200FF9429 /* chatMe.png */,
 				37D1664B1C900F8900FF9429 /* messages.plist */,
@@ -1023,6 +1032,8 @@
 				37042DB81C8D591C003B322A /* 01.png in Resources */,
 				37042DE91C8D6653003B322A /* topic13.png in Resources */,
 				37042DEE1C8D6653003B322A /* topic18.png in Resources */,
+				37E711DB1C9A6B0300CCED34 /* chatMe-120.png in Resources */,
+				37E711DC1C9A6B0300CCED34 /* chatMe-152.png in Resources */,
 				37042E171C8F07FD003B322A /* 06-3.png in Resources */,
 				37D166531C900F8900FF9429 /* mychat_focused.png in Resources */,
 				37042DEA1C8D6653003B322A /* topic14.png in Resources */,
@@ -1090,6 +1101,7 @@
 				37042DAD1C8D5833003B322A /* 06-1.png in Resources */,
 				37D166591C90131C00FF9429 /* 12-2.png in Resources */,
 				37042DE61C8D6653003B322A /* topic10.png in Resources */,
+				37E711DA1C9A6B0300CCED34 /* chatMe-76.png in Resources */,
 				F46C98011BEC7BBE0085633A /* Main.storyboard in Resources */,
 				3790320A1C91237F0096C159 /* 07-4.png in Resources */,
 				37042E031C8D73E3003B322A /* 13.png in Resources */,
@@ -1348,10 +1360,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Jiaxin You (2JKNTB9955)";
 				INFOPLIST_FILE = wealTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cnu.wealTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = weal;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/weal.app/weal";
 			};
 			name = Debug;
@@ -1360,10 +1374,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Jiaxin You (2JKNTB9955)";
 				INFOPLIST_FILE = wealTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cnu.wealTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = weal;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/weal.app/weal";
 			};
 			name = Release;

@@ -13,9 +13,8 @@
 //按钮1:形和义
 @property NSString *wordId;// 单词id
 @property NSString *word;//单词拼写，存这个单词
+@property NSString *topic;//单词主题
 @property NSArray *meaning;// 数组，存放多个版本的词义
-
-//按钮2:单词本身的图片（图片）
 @property NSArray *picture;// 数组
 
 //按钮3:与单词有关的句子
@@ -29,5 +28,5 @@
 
 //按钮6:与单词有关的绘本（图片）
 @property NSArray *picturebook;// 数组
-
+@property int tagid;
 @end

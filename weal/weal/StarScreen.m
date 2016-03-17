@@ -22,10 +22,15 @@
 
 
 @implementation StarScreen
-@synthesize user;
+@synthesize user,themeText;
+NSArray *themeKeyArray;//9个大主题的编号用数组保存
+NSDictionary *themeDictionary;//9个大主题的编号及其英文含义用键值对保存
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    themeKeyArray = @[@"2-2",@"2-10",@"2-11",@"2-12",@"2-15",@"2-16",@"2-17",@"2-20",@"2-21"];
+    
+    themeDictionary =@{@"2-2":@"Family, frinends and people around", @"2-10":@"Festivals, holidays and celebrations",@"2-11":@"Shopping",@"2-12":@"Food and drinkss",@"2-15":@"Weather",@"2-16":@"FRecreation and sports",@"2-17":@"Travel and transport",@"2-20":@"Nature",@"2-21":@"The world and the environment"};//9个大主题及其对应的编号
     NSLog(@"star user ::%@", user.loginName );
     self.photos = [[NSMutableArray alloc]init];
 //    NSMutableArray *photoPaths = [[NSMutableArray alloc]init];
@@ -68,7 +73,7 @@
             float alpha = i*1.0/10 + 0.2;
             [photo setImageAlphaAndSpeedAndSize:alpha];
             
-            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapImage:)];
+            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapImage2:)];
             [photo addGestureRecognizer:tap];
             
             [self.photos addObject:photo];
@@ -168,7 +173,7 @@
 }
 
 
-- (void)tapImage:(UIGestureRecognizer*)sender {
+- (void)tapImage2:(UIGestureRecognizer*)sender {
     
     XYZPhoto *photo = sender.view;
     
@@ -185,8 +190,14 @@
             photo.speed = 0;
             photo.alpha = 1;
             photo.state = XYZPhotoStateBig;
-            
-        } else if (photo.state == XYZPhotoStateBig || photo.state == XYZPhotoStateTogether) {
+            //取主题键
+            NSString *thisThemeKey = [themeKeyArray objectAtIndex:photo.photoId-1];
+            NSLog(@"变大按钮对应的主题词为%@",thisThemeKey);
+            //取主题值，并呈现在前台
+            themeText.text = [themeDictionary objectForKey:thisThemeKey];
+            [themeText setBackgroundColor:[UIColor clearColor]];
+        }
+        else if (photo.state == XYZPhotoStateBig || photo.state == XYZPhotoStateTogether) {
             NSLog(@"跳转photoId:%d",photo.photoId);
 //            sender.frame = sender.oldFrame;
 //            sender.alpha = sender.oldAlpha;
@@ -197,6 +208,8 @@
             UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             WordGuide *nextPage = [mainStoryboard instantiateViewControllerWithIdentifier:@"WordGuide"];
             nextPage.userWordGuide = user;
+            nextPage.thisThemeKey = [themeKeyArray objectAtIndex:photo.photoId-1];//把主题图片对应的编码传递给下一页
+            nextPage.thisThemeValue = [themeDictionary objectForKey:nextPage.thisThemeKey];//把主题传递给下一页
             [nextPage setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
             [self presentViewController:nextPage animated:YES completion:nil];
         }
@@ -228,6 +241,7 @@
     UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     Robot *nextPage = [mainStoryboard instantiateViewControllerWithIdentifier:@"Robot"];
     nextPage.userRobot = user;
+    
     [nextPage setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
     [self presentViewController:nextPage animated:YES completion:nil];
     

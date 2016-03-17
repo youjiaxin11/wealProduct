@@ -26,7 +26,7 @@
 @end
 
 @implementation WordLearning
-@synthesize userWordLearning,thisWord,wordLeaning;
+@synthesize userWordLearning,thisWord,wordLeaning,thisThemeKey1,thisThemeValue1;
 Word *word;
 - (void)viewDidLoad
 {
@@ -331,6 +331,9 @@ Word *word;
         UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         WordGuide *nextPage = [mainStoryboard instantiateViewControllerWithIdentifier:@"WordGuide"];
         nextPage.userWordGuide = userWordLearning;
+        nextPage.thisThemeKey = thisThemeKey1;//把主题图片对应的编码传递给下一页
+        nextPage.thisThemeValue = thisThemeValue1;//把主题传递给下一页
+        nextPage.fromnextpage=1;
         [nextPage setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
         [self presentViewController:nextPage animated:YES completion:nil];
     }

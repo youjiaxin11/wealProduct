@@ -10,5 +10,6 @@
 @interface StarScreen : BaseControl
 
 @property (assign, nonatomic) User* user;//当前登录用户
+@property (strong, nonatomic) IBOutlet UITextField *themeText;
 
 @end

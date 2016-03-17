@@ -10,5 +10,5 @@
 #import "Word.h"
 
 @implementation Word
-@synthesize word,wordId,sentence,dialogue,picture,picturebook,video,meaning;
+@synthesize word,wordId,sentence,dialogue,picture,picturebook,video,meaning,topic,tagid;
 @end
