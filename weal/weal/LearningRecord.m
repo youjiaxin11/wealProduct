@@ -18,6 +18,7 @@
     // 加载页面
 //    NSString* urlstr = [root_url stringByAppendingString:@"admin/loginUI.html"];
     
+    //webview
     NSString* urlstr = @"http://172.19.203.216:8080/DataREchart/WChart.jsp";
     NSLog(@"urlstr%@",urlstr);
     NSURL *url = [NSURL URLWithString:urlstr];
@@ -25,7 +26,7 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         [_webShow loadRequest:request];
     });
-//    
+//
     [_nameLbl setText:self.userLearningRecord.loginName];
     [_ageLbl setText:[NSString stringWithFormat:@"%d",self.userLearningRecord.birthYear]];
     [_goldenLbl setText:[NSString stringWithFormat:@"%d",self.userLearningRecord.golden]];

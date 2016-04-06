@@ -50,7 +50,8 @@ NSString* str4;
     
     NSDictionary* postvalues = [NSDictionary dictionaryWithObjectsAndKeys:@"mknetwork",@"file",nil];
     MKNetworkEngine* UPEngine = [[MKNetworkEngine alloc] init] ;
-    MKNetworkOperation* UPOperation = [UPEngine operationWithURLString:@"http://172.19.203.8:8080/iqasweb/mobile/ios/work/uploadWork.html" params:postvalues httpMethod:@"POST"];
+        NSString *str =[root_url stringByAppendingString:@"mobile/ios/work/uploadWork.html"];
+    MKNetworkOperation* UPOperation = [UPEngine operationWithURLString:str params:postvalues httpMethod:@"POST"];
     [UPOperation addFile:_UAFullPath forKey:@"file"];
     [UPOperation addCompletionHandler:^(MKNetworkOperation *completedOperation) {
         NSLog(@"Photo成功了?是的，成功了！");

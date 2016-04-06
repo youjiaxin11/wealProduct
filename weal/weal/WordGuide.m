@@ -69,7 +69,8 @@ int tag1=1;
 - (void)getSecondTheme{
     NSError *error;
     //加载一个NSURL对象
-    NSString *totalUrl = [NSString stringWithFormat:@"http://172.19.203.8:8080/iqasweb/mobile/ios/theme/findChilThemes.html?themeNumber=%@",thisThemeKey];
+    NSString *str =[root_url stringByAppendingString:@"mobile/ios/theme/findChilThemes.html?themeNumber=%@"];
+    NSString *totalUrl =[NSString stringWithFormat:str,thisThemeKey];
     
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:totalUrl]];
     //将请求的url数据放到NSData对象中
@@ -140,7 +141,8 @@ int tag1=1;
     Word *thisTheme = [secondeThemeAllInfo objectAtIndex:secondThemeIndex];
     NSLog(@"secondeThemeKey  ==  %@", thisTheme.topic);
     NSString *myTheme = [thisTheme.topic substringToIndex:thisTheme.topic.length-1];
-    NSString *totalUrl = [NSString stringWithFormat:@"http://172.19.203.8:8080/iqasweb/mobile/ios/theme/findWordsByTheme.html?themeNumber=%@&userName=%@&password=%@",myTheme, @"abc", @"123"];
+        NSString *str =[root_url stringByAppendingString:@"mobile/ios/theme/findWordsByTheme.html?themeNumber=%@&userName=%@&password=%@"];
+    NSString *totalUrl = [NSString stringWithFormat:str,myTheme, @"abc", @"123"];
     
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:totalUrl]];
     //将请求的url数据放到NSData对象中
