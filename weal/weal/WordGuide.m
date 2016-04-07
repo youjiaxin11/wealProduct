@@ -38,10 +38,15 @@ int mm;
 int countsecond=0;//点击二级主题次数
 int tag1=1;
 - (void)viewDidLoad
-{   NSLog(@"from=%d",fromnextpage);
+{
     [super viewDidLoad];
+    
+    NSLog(@"from=%d",fromnextpage);
+    NSLog(@"thisTheme=%@",thisThemeValue);
+   // NSLog(@"star11 user ::%@",userWordGuide.loginName );
     //必须先初始化才能添加元素
-    imageViewlineshow=[[UIImageView alloc]initWithFrame:self.view.frame]; imageViewlineshow1=[[UIImageView alloc]initWithFrame:self.view.frame];
+    imageViewlineshow=[[UIImageView alloc]initWithFrame:self.view.frame];
+imageViewlineshow1=[[UIImageView alloc]initWithFrame:self.view.frame];
     secondeThemeKey = [[NSMutableArray alloc]init];
     secondeTheme = [[NSMutableArray alloc]init];
     secondeThemeAllWords = [[NSMutableArray alloc]init];
@@ -198,6 +203,7 @@ int tag1=1;
         NSLog(@"left");
         UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         StarScreen *nextPage = [mainStoryboard instantiateViewControllerWithIdentifier:@"StarScreen"];
+        NSLog(@"star1 user ::%@",userWordGuide.loginName );
         nextPage.user = userWordGuide;
         [nextPage setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
         [self presentViewController:nextPage animated:YES completion:nil];
@@ -393,16 +399,21 @@ int tag1=1;
         }
     }
     NSLog(@"counttopic3=%d",counttopic3);
+    
     for(int k=0;k<counttopic3;k++)
     {
-        CGRect btn1Frame = CGRectMake(100+300+150*(index2+1),10+ k*(700/counttopic3),50 ,50);
+        CGRect btn1Frame = CGRectMake(100+300+150,10+ k*(700/counttopic3),50 ,50);
         UIButton *btn1= [UIButton buttonWithType:UIButtonTypeRoundedRect];
         btn1.frame =btn1Frame;
          Word* wordt3=[topic33s objectAtIndex:k];
+       
         for(int i=0;i<[arraybytopic count];i++)
-        { Word* wordtt3=[arraybytopic objectAtIndex:i];
+        {
+           
+            Word* wordtt3=[arraybytopic objectAtIndex:i];
             if(wordtt3.word==wordt3.word) {btn1.tag=wordtt3.tagid;
-                NSLog(@"wordtt3.tag=%d",btn1.tag);}
+           //     NSLog(@"wordtt3.tag=%d",btn1.tag);
+            }
         }        //NSString* fileName = [@"star1" stringByAppendingString:[NSString stringWithFormat: @"%d", 1]];
         // NSString* fileName2 = [fileName stringByAppendingString:@".png"];
         [btn1 setBackgroundImage:[UIImage imageNamed:@"star5"] forState:UIControlStateNormal];
@@ -414,47 +425,15 @@ int tag1=1;
         [btn1 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [btn1 addTarget:self action:@selector(btnPressed:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:btn1];
-        
         [self drawline1:btn btn2:btn1];
-        
     }
-}
--(void)btnPressed:(id)sender{
-    UIButton* btn = (UIButton*)sender;
-    NSLog(@"tagzzz=%d",btn.tag);
     
-    if(btn.tag<=[topic1s count]) [self topic2:btn indexx:btn.tag-1];
-    else if([topic1s count]+1<=btn.tag&&btn.tag<=[topic1s count]+[topic2s count])
-    {   [self deleteLine];
-        countsecond++;
-        NSLog(@"countsecond=%d",countsecond);
-        if(countsecond>1)
-        {   //[self deleteLine];
-            NSLog(@"topic1scountz=%d",[topic1s count]);
-            NSLog(@"topic2scountz=%d",[topic2s count]);
-            NSLog(@"topic3scountz=%d",[topic3s count]);
-            for(int k=[topic1s count]+[topic2s count]+1;k<[topic1s count]+[topic2s count]+1+[topic3s count];k++)
-            {  UIButton* hbutton=[self.view viewWithTag:k];
-                NSLog(@"title=%@",hbutton.titleLabel.text);
-                NSLog(@"tagkkk=%d",hbutton.tag);
-                [hbutton removeFromSuperview];
-            }
-        }
-        [self topic3:btn indexx:btn.tag-[topic1s count]-1];
-    }
-    else if(btn.tag>=[topic1s count]+[topic2s count]+1)
-    {
-        mm=btn.tag-[topic1s count]-[topic2s count]-1;
-        NSLog(@"mm=%d",mm);
-        Word* wordn=[topic3s objectAtIndex:mm];
-        NSString* nextword=wordn.word;
-        NSLog(@"word=%@",nextword);
-        [self nextpage:nextword];
-    }
+    
 }
 
 -(void)drawline:(UIButton *)btn btn2:(UIButton *)btn1 {
     // imageViewlineshow=[[UIImageView alloc]initWithFrame:self.view.frame];
+    
     [self.view addSubview:imageViewlineshow];
     self.view.backgroundColor=[UIColor whiteColor];
     UIGraphicsBeginImageContext(imageViewlineshow.frame.size);
@@ -474,7 +453,9 @@ int tag1=1;
 
 -(void)drawline1:(UIButton *)btn btn2:(UIButton *)btn1{
     //imageViewlineshow1=[[UIImageView alloc]initWithFrame:self.view.frame];
-    [self.view addSubview:imageViewlineshow1];
+    //[self deleteLine];
+   
+    
     self.view.backgroundColor=[UIColor whiteColor];
     UIGraphicsBeginImageContext(imageViewlineshow1.frame.size);
     [imageViewlineshow1.image drawInRect:CGRectMake(0, 0, imageViewlineshow1.frame.size.width, imageViewlineshow1.frame.size.height)];
@@ -487,15 +468,60 @@ int tag1=1;
     CGContextAddLineToPoint(UIGraphicsGetCurrentContext(), btn1.frame.origin.x+20, btn1.frame.origin.y+25);
     //终点坐标
     CGContextStrokePath(UIGraphicsGetCurrentContext());
+   //  CGContextSaveGState(UIGraphicsGetCurrentContext());
     imageViewlineshow1.image=UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
+    [self.view addSubview:imageViewlineshow1];
+    
 }
 - (void)deleteLine {
     
-    [self.view addSubview:imageViewlineshow1];
-    CGContextClearRect(UIGraphicsGetCurrentContext(),self.view.frame);
+    //[self.view addSubview:imageViewlineshow1];
+   // CGContextClearRect(UIGraphicsGetCurrentContext(),imageViewlineshow1.frame);
     [imageViewlineshow1 removeFromSuperview];
     
+}
+
+-(void)btnPressed:(id)sender{
+    
+    UIButton* btn = (UIButton*)sender;
+    NSLog(@"tagzzz=%d",btn.tag);
+    
+    if(btn.tag<=[topic1s count]) [self topic2:btn indexx:btn.tag-1];
+    else if([topic1s count]+1<=btn.tag&&btn.tag<=[topic1s count]+[topic2s count])
+    {   [self deleteLine];
+        countsecond++;
+        //if(countsecond==1)
+       // [self topic3:btn indexx:btn.tag-[topic1s count]-1];
+       // NSLog(@"countsecond=%d",countsecond);
+      //  if(countsecond>1) {
+           // [self deleteLine];
+            // NSLog(@"topic1scountz=%d",[topic1s count]);
+            // NSLog(@"topic2scountz=%d",[topic2s count]);
+            // NSLog(@"topic3scountz=%d",[topic3s count]);
+            for(int k=[topic1s count]+[topic2s count]+1;k<[topic1s count]+[topic2s count]+1+[topic3s count];k++)
+            {  UIButton* hbutton=[self.view viewWithTag:k];
+                //  NSLog(@"title=%@",hbutton.titleLabel.text);
+                // NSLog(@"tagkkk=%d",hbutton.tag);
+                [hbutton removeFromSuperview];
+               
+            }
+        imageViewlineshow1=[[UIImageView alloc]initWithFrame:self.view.frame];
+             [self topic3:btn indexx:btn.tag-[topic1s count]-1];
+            
+        }
+       
+  //  }
+
+    else if(btn.tag>=[topic1s count]+[topic2s count]+1)
+    {
+        mm=btn.tag-[topic1s count]-[topic2s count]-1;
+        NSLog(@"mm=%d",mm);
+        Word* wordn=[topic3s objectAtIndex:mm];
+        NSString* nextword=wordn.word;
+        NSLog(@"word=%@",nextword);
+        [self nextpage:nextword];
+    }
 }
 
 @end

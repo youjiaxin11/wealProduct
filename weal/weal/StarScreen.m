@@ -25,9 +25,11 @@
 @synthesize user,themeText;
 NSArray *themeKeyArray;//9个大主题的编号用数组保存
 NSDictionary *themeDictionary;//9个大主题的编号及其英文含义用键值对保存
+User* user1;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    user1=self.user;
     themeKeyArray = @[@"2-2",@"2-10",@"2-11",@"2-12",@"2-15",@"2-16",@"2-17",@"2-20",@"2-21"];
     
     themeDictionary =@{@"2-2":@"Family, frinends and people around", @"2-10":@"Festivals, holidays and celebrations",@"2-11":@"Shopping",@"2-12":@"Food and drinkss",@"2-15":@"Weather",@"2-16":@"FRecreation and sports",@"2-17":@"Travel and transport",@"2-20":@"Nature",@"2-21":@"The world and the environment"};//9个大主题及其对应的编号
@@ -205,13 +207,8 @@ NSDictionary *themeDictionary;//9个大主题的编号及其英文含义用键�
 //            sender.imageView.frame = sender.bounds;
 //            sender.drawView.frame = sender.bounds;
             photo.state = XYZPhotoStateNormal;
-            UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            WordGuide *nextPage = [mainStoryboard instantiateViewControllerWithIdentifier:@"WordGuide"];
-            nextPage.userWordGuide = user;
-            nextPage.thisThemeKey = [themeKeyArray objectAtIndex:photo.photoId-1];//把主题图片对应的编码传递给下一页
-            nextPage.thisThemeValue = [themeDictionary objectForKey:nextPage.thisThemeKey];//把主题传递给下一页
-            [nextPage setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
-            [self presentViewController:nextPage animated:YES completion:nil];
+            [ self nextpage:photo];
+           
         }
         
     }];
@@ -242,6 +239,19 @@ NSDictionary *themeDictionary;//9个大主题的编号及其英文含义用键�
     Robot *nextPage = [mainStoryboard instantiateViewControllerWithIdentifier:@"Robot"];
     nextPage.userRobot = user;
     
+    
+    [nextPage setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
+    [self presentViewController:nextPage animated:YES completion:nil];
+    
+}
+
+-(void )nextpage:(XYZPhoto *)photo {
+    UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    WordGuide *nextPage = [mainStoryboard instantiateViewControllerWithIdentifier:@"WordGuide"];
+    nextPage.userWordGuide = user1;
+  
+    nextPage.thisThemeKey = [themeKeyArray objectAtIndex:photo.photoId-1];//把主题图片对应的编码传递给下一页
+    nextPage.thisThemeValue = [themeDictionary objectForKey:nextPage.thisThemeKey];//把主题传递给下一页
     [nextPage setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
     [self presentViewController:nextPage animated:YES completion:nil];
     
